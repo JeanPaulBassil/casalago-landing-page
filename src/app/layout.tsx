@@ -4,7 +4,6 @@ import './globals.css'
 import { NextUIProvider } from '@nextui-org/system'
 import { Toaster } from 'react-hot-toast'
 import ReactQueryClientProvider from '@/providers/ReactQueryProvider'
-import Particles from '@/app/_components/magicui/particles'
 
 const inter = Inter({ subsets: ['latin'] })
 
