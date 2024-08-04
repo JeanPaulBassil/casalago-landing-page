@@ -4,6 +4,7 @@ import './globals.css'
 import { NextUIProvider } from '@nextui-org/system'
 import { Toaster } from 'react-hot-toast'
 import ReactQueryClientProvider from '@/providers/ReactQueryProvider'
+import Header from './_components/Header'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +23,10 @@ export default function RootLayout({
       <body className={inter.className}>
         <ReactQueryClientProvider>
           <NextUIProvider>
-            <div className="h-full w-full">{children}</div>
+            <div className="h-full w-full">
+              <Header />
+              {children}
+            </div>
             <Toaster position="top-right" />
           </NextUIProvider>
         </ReactQueryClientProvider>
