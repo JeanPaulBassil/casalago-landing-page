@@ -27,7 +27,7 @@ export default function RootLayout({
             <div className="h-screen w-full flex items-center justify-center bg-[#4DB5ED]">
               {/* <Header />
               {children} */}
-              <Image src="/158667.gif" alt="logo" width={1000} height={1000} className='h-[50vh] w-[50vw]'/>
+              <Image src="/158667.gif" alt="logo" width={1000} height={1000} className='h-[50vh] w-full md:w-[100%] lg:w-[50vw]'/>
             </div>
             <Toaster position="top-right" />
           </NextUIProvider>
