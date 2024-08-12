@@ -24,10 +24,9 @@ export default function RootLayout({
       <body className={inter.className}>
         <ReactQueryClientProvider>
           <NextUIProvider>
-            <div className="h-screen w-full flex items-center justify-center bg-[#4DB5ED]">
-              {/* <Header />
-              {children} */}
-              <Image src="/158667.gif" alt="logo" width={1000} height={1000} className='h-[50vh] w-full md:w-[100%] lg:w-[50vw]'/>
+            <div className="h-screen w-full ">
+              <Header />
+              {children}
             </div>
             <Toaster position="top-right" />
           </NextUIProvider>
