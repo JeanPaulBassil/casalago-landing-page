@@ -49,7 +49,7 @@ const menuItems = [{
         backgroundColor: 'transparent',
         boxShadow: 'none',
       }}
-      className='py-10'
+      className='py-2 lg:py-10'
       classNames={{
         item: [
           "flex",
@@ -81,7 +81,7 @@ const menuItems = [{
           icon={isMenuOpen ? <X /> : <Menu />}
         />
         <NavbarBrand>
-          <Image src='logo.png' width={100} height={100} alt='logo'/>
+          <Image src='logo.png' width={100} height={100} alt='logo' className='w-[50px] lg:w-auto'/>
         </NavbarBrand>
       </NavbarContent>
 
@@ -101,7 +101,9 @@ const menuItems = [{
           </NavbarItem>
         ))}
       </NavbarContent>
-      <NavbarMenu className='mt-20'>
+      <NavbarMenu className='mt-4 lg:mt-20' style={{
+        backgroundColor: 'transparent'
+      }}>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link color="foreground" className="w-full  flex items-center gap-2" href="#" size="lg">
