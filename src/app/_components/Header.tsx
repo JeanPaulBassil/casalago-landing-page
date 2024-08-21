@@ -24,7 +24,7 @@ const menuItems = [{
     icon: <Home />
   },
   {
-    name: 'Gallery',
+    name: 'Products',
     icon: <Images />
   },
   {
