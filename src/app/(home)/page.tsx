@@ -8,6 +8,7 @@ import BlurFade from '../_components/magic-ui/BlurFade'
 import TextRevealByWord from '../_components/magic-ui/TextReveal'
 import WordPullUp from '../_components/magic-ui/WordPullUp'
 import ShimmerButton from '../_components/magic-ui/ShimmerButton'
+import TypingAnimation from '../_components/magic-ui/TypingAnimation'
 
 const page = () => {
   const [isLgScreen, setIsLgScreen] = useState(false)
@@ -237,15 +238,42 @@ const page = () => {
                 </div>
               </div>
               <BlurFade inView delay={0.8} className="m-auto">
-                  <Button
-                    radius="sm"
-                    className="m-auto max-w-[300px] bg-[#728BAD] px-5 font-bold text-[#ffffff] sm:px-10 lg:m-0"
-                  >
-                    Receive A Quote
-                  </Button>
+                <Button
+                  radius="sm"
+                  className="m-auto max-w-[300px] bg-[#728BAD] px-5 font-bold text-[#ffffff] sm:px-10 lg:m-0"
+                >
+                  Receive A Quote
+                </Button>
               </BlurFade>
             </div>
           </ShineBorder>
+        </BlurFade>
+      </div>
+
+      <div className='relative'>
+        <BlurFade inView className="mt-16 w-full">
+          <ShineBorder className="w-[70%] lg:w-[90%] 2xl:w-[75%] bg-[#F1DED0] flex flex-col gap-10 items-start px-10 lg:pl-16 py-5 lg:py-20">
+            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl">
+              <BlurFade inView delay={0.2} >ABOUT US</BlurFade>
+            </span>
+            <BlurFade inView delay={0.5}>
+              <p className="max-w-[300px] lg:max-w-[350px] xl:max-w-[470px] text-sm md:text-base lg:text-lg xl:text-2xl">
+                Al Mouhawess Wood - We specialize in crafting high-quality wood products tailored to
+                your specifications. From custom furniture like chairs, tables, and wardrobes to
+                unique architectural elements, our workshop is equipped with state-of-the-art
+                industrial equipment to bring your visions to life.
+              </p>
+            </BlurFade>
+          </ShineBorder>
+        </BlurFade>
+        <BlurFade inView delay={0.4} className="absolute left-[67%] 2xl:left-[57%] top-[10%]">
+          <Image src="AboutUs/2.png" className="h-[100px] lg:h-[150px] xl:h-full object-cover xl:w-[100%] lg:block hidden" />
+        </BlurFade>
+        <BlurFade inView delay={0.8} className="absolute left-[50%] 2xl:left-[40%] top-[25%]">
+          <Image src="AboutUs/1.png" className="h-[200px] lg:h-[250px] xl:h-[300px] object-cover xl:w-[100%] lg:block hidden" />
+        </BlurFade>
+        <BlurFade inView delay={1} className="absolute left-[65%] 2xl:left-[55%] top-[60%]">
+          <Image src="AboutUs/3.png" className="h-[100px] lg:h-[150px] xl:h-full object-cover xl:w-[100%] lg:block hidden" />
         </BlurFade>
       </div>
     </div>
