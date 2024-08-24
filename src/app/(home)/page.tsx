@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
 import Header from '../_components/Header'
-import { Button, Image } from '@nextui-org/react'
-import { Check, X } from 'lucide-react'
+import { Button, Image, Input, Textarea } from '@nextui-org/react'
+import { Check, MessageCircle, Phone, User, X } from 'lucide-react'
 import ShineBorder from '../_components/magic-ui/ShineBorder'
 import BlurFade from '../_components/magic-ui/BlurFade'
 import TextRevealByWord from '../_components/magic-ui/TextReveal'
@@ -250,14 +250,16 @@ const page = () => {
         </BlurFade>
       </div>
 
-      <div className='relative'>
+      <div className="relative">
         <BlurFade inView className="mt-16 w-full">
-          <ShineBorder className="w-[70%] lg:w-[90%] 2xl:w-[75%] bg-[#F1DED0] flex flex-col gap-10 items-start px-10 lg:pl-16 py-5 lg:py-20">
+          <ShineBorder className="flex w-[70%] flex-col items-start gap-10 bg-[#F1DED0] px-10 py-5 lg:w-[90%] lg:py-20 lg:pl-16 2xl:w-[75%]">
             <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl">
-              <BlurFade inView delay={0.2} >ABOUT US</BlurFade>
+              <BlurFade inView delay={0.2}>
+                ABOUT US
+              </BlurFade>
             </span>
             <BlurFade inView delay={0.5}>
-              <p className="max-w-[300px] lg:max-w-[350px] xl:max-w-[470px] text-sm md:text-base lg:text-lg xl:text-2xl">
+              <p className="max-w-[300px] text-sm md:text-base lg:max-w-[350px] lg:text-lg xl:max-w-[470px] xl:text-2xl">
                 Al Mouhawess Wood - We specialize in crafting high-quality wood products tailored to
                 your specifications. From custom furniture like chairs, tables, and wardrobes to
                 unique architectural elements, our workshop is equipped with state-of-the-art
@@ -266,15 +268,79 @@ const page = () => {
             </BlurFade>
           </ShineBorder>
         </BlurFade>
-        <BlurFade inView delay={0.4} className="absolute left-[67%] 2xl:left-[57%] top-[10%]">
-          <Image src="AboutUs/2.png" className="h-[100px] lg:h-[150px] xl:h-full object-cover xl:w-[100%] lg:block hidden" />
+        <BlurFade inView delay={0.4} className="absolute left-[67%] top-[10%] 2xl:left-[57%]">
+          <Image
+            src="AboutUs/2.png"
+            className="hidden h-[100px] object-cover lg:block lg:h-[150px] xl:h-full xl:w-[100%]"
+          />
         </BlurFade>
-        <BlurFade inView delay={0.8} className="absolute left-[50%] 2xl:left-[40%] top-[25%]">
-          <Image src="AboutUs/1.png" className="h-[200px] lg:h-[250px] xl:h-[300px] object-cover xl:w-[100%] lg:block hidden" />
+        <BlurFade inView delay={0.8} className="absolute left-[50%] top-[25%] 2xl:left-[40%]">
+          <Image
+            src="AboutUs/1.png"
+            className="hidden h-[200px] object-cover lg:block lg:h-[250px] xl:h-[300px] xl:w-[100%]"
+          />
         </BlurFade>
-        <BlurFade inView delay={1} className="absolute left-[65%] 2xl:left-[55%] top-[60%]">
-          <Image src="AboutUs/3.png" className="h-[100px] lg:h-[150px] xl:h-full object-cover xl:w-[100%] lg:block hidden" />
+        <BlurFade inView delay={1} className="absolute left-[65%] top-[60%] 2xl:left-[55%]">
+          <Image
+            src="AboutUs/3.png"
+            className="hidden h-[100px] object-cover lg:block lg:h-[150px] xl:h-full xl:w-[100%]"
+          />
         </BlurFade>
+      </div>
+      <div className="mt-20 mb-56 w-full">
+        <div className="flex w-full justify-end px-10 lg:px-20">
+          <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl">
+            <BlurFade inView delay={0.2}>
+              Any questions?
+            </BlurFade>
+          </span>
+        </div>
+        <div className="mt-10 flex w-full flex-col items-end justify-between gap-5 px-10 lg:px-20">
+          <BlurFade inView delay={0.4} className="w-full flex justify-end">
+            <Input
+              placeholder="Your Name"
+              className="w-full lg:w-[400px]"
+              radius="sm"
+              variant="bordered"
+              classNames={{
+                inputWrapper: 'px-0',
+                innerWrapper: 'px-2',
+              }}
+              startContent={<User />}
+            />
+          </BlurFade>
+          <BlurFade inView delay={0.6} className="w-full flex justify-end">
+            <Input
+              placeholder="Your Phone Number"
+              className="w-full lg:w-[400px]"
+              radius="sm"
+              variant="bordered"
+              classNames={{
+                inputWrapper: 'px-0',
+                innerWrapper: 'px-2',
+              }}
+              startContent={<Phone />}
+            />
+          </BlurFade>
+          <BlurFade inView delay={0.8} className="w-full flex justify-end">
+            <Textarea
+              placeholder="Your Question"
+              className="w-full lg:w-[400px]"
+              radius="sm"
+              variant="bordered"
+              classNames={{
+                inputWrapper: 'p-0',
+                innerWrapper: 'py-2 px-2',
+              }}
+              startContent={<MessageCircle />}
+            />
+          </BlurFade>
+          <BlurFade inView delay={1} className="w-full flex justify-end">
+            <Button className="w-[100px] bg-[#728BAD] font-bold text-[#ffffff]" radius="sm">
+              Send
+            </Button>
+          </BlurFade>
+        </div>
       </div>
     </div>
   )
