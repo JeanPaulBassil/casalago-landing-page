@@ -89,7 +89,7 @@ const page = () => {
         </span>
       </div>
       <div className="flex flex-col items-center gap-10 md:items-start">
-        <BlurFade inView={true}>
+        <BlurFade inView={true} className='w-full flex justify-center lg:justify-start'>
           <div
             style={{ backgroundImage: "url('woodWeWorkWith/1.png')" }}
             className="flex h-auto w-auto flex-col items-center gap-4 rounded-xl px-10 pb-10 shadow-xl md:h-[150px] md:w-[100%] md:flex-row md:px-0 md:pb-0 lg:h-[220px] lg:w-[80%] lg:gap-10 xl:w-[1026px]"
@@ -121,7 +121,7 @@ const page = () => {
             </div>
           </div>
         </BlurFade>
-        <BlurFade delay={0.2} inView>
+        <BlurFade delay={0.2} inView className='w-full flex justify-center lg:justify-start'>
           <div
             style={{ backgroundImage: "url('woodWeWorkWith/2.png')" }}
             className="flex h-auto w-auto flex-col items-center gap-4 rounded-xl px-12 pb-10 shadow-xl md:h-[150px] md:w-[100%] md:flex-row md:px-0 md:pb-0 lg:h-[220px] lg:w-[80%] lg:gap-10 xl:w-[1026px]"
@@ -155,7 +155,7 @@ const page = () => {
             </div>
           </div>
         </BlurFade>
-        <BlurFade delay={0.4} inView>
+        <BlurFade delay={0.4} inView className='w-full flex justify-center lg:justify-start'>
           <div
             style={{ backgroundImage: "url('woodWeWorkWith/3.png')" }}
             className="flex h-auto w-auto flex-col items-center gap-4 rounded-xl px-10 pb-10 shadow-xl md:h-[150px] md:w-[100%] md:flex-row md:gap-0 md:px-0 md:pb-0 lg:h-[210px] lg:w-[80%] lg:gap-10 xl:w-[1026px]"

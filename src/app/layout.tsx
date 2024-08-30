@@ -27,6 +27,7 @@ export default function RootLayout({
             <div className="h-screen w-full ">
               <Header />
               {children}
+              <footer />
             </div>
             <Toaster position="top-right" />
           </NextUIProvider>
