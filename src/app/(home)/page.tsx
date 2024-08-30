@@ -5,10 +5,6 @@ import { Button, Image, Input, Textarea } from '@nextui-org/react'
 import { Check, MessageCircle, Phone, User, X } from 'lucide-react'
 import ShineBorder from '../_components/magic-ui/ShineBorder'
 import BlurFade from '../_components/magic-ui/BlurFade'
-import TextRevealByWord from '../_components/magic-ui/TextReveal'
-import WordPullUp from '../_components/magic-ui/WordPullUp'
-import ShimmerButton from '../_components/magic-ui/ShimmerButton'
-import TypingAnimation from '../_components/magic-ui/TypingAnimation'
 
 const page = () => {
   const [isLgScreen, setIsLgScreen] = useState(false)
