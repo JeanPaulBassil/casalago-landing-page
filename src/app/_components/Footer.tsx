@@ -1,46 +1,23 @@
 'use client'
-import React, { useState } from 'react'
-import {
-  Navbar,
-  NavbarBrand,
-  NavbarContent,
-  NavbarItem,
-  Link,
-  Button,
-  NavbarMenu,
-  NavbarMenuItem,
-  NavbarMenuToggle,
-  Image,
-} from '@nextui-org/react'
-import {
-  Computer,
-  GalleryHorizontal,
-  Home,
-  Images,
-  Info,
-  Menu,
-  Phone,
-  PhoneCall,
-  Pin,
-  Users,
-  X,
-} from 'lucide-react'
+import React from 'react'
+import { Image } from '@nextui-org/react'
+import { PhoneCall, Pin } from 'lucide-react'
 import BlurFade from './magic-ui/BlurFade'
 
-export default function Header() {
+export default function Footer() {
   return (
-    <footer className="w-full bg-[#F1DED0]">
-      <div className="flex items-center justify-between">
+    <div className="flex w-full items-center justify-between bg-[#F1DED0] px-20 py-8 mt-10">
+        <BlurFade inView delay={0.5}>
         <Image src="/logo.png" alt="logo" width={100} height={100} />
-        <div className="flex items-center gap-2 text-[#141414]">
-          <PhoneCall />
-          <p>+961 03 660 844</p>
-        </div>
-        <div className="flex items-center gap-2 text-[#141414]">
-          <Pin />
-          <p>Kouba, Batroun, Lebanon</p>
-        </div>
-      </div>
-    </footer>
+      </BlurFade>
+      <BlurFade inView delay={0.7} className="flex items-center gap-2 text-[#141414]">
+        <PhoneCall />
+        <p>+961 03 660 844</p>
+      </BlurFade>
+      <BlurFade inView delay={0.9} className="flex items-center gap-2 text-[#141414]">
+        <Pin />
+        <p>Kouba, Batroun, Lebanon</p>
+      </BlurFade>
+    </div>
   )
 }

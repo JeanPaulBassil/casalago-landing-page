@@ -5,6 +5,7 @@ import { Button, Image, Input, Textarea } from '@nextui-org/react'
 import { Check, MessageCircle, Phone, User, X } from 'lucide-react'
 import ShineBorder from '../_components/magic-ui/ShineBorder'
 import BlurFade from '../_components/magic-ui/BlurFade'
+import Footer from '../_components/Footer'
 
 const page = () => {
   const [isLgScreen, setIsLgScreen] = useState(false)
@@ -24,9 +25,9 @@ const page = () => {
   }, [])
 
   return (
-    <div className="absolute left-0 top-0 h-screen w-full lg:h-auto">
+    <div className="">
       <div style={{ backgroundImage: "url('/heroWoodBg.png')" }}>
-        <div className="mt-20 py-16 lg:mt-36">
+        <div className="py-16">
           <BlurFade>
             <ShineBorder className="w-[70%] flex-row bg-[#ffffff] p-10 lg:flex lg:w-[80%] lg:gap-12">
               <div className="flex flex-col md:gap-12 lg:gap-16">
@@ -245,7 +246,6 @@ const page = () => {
           </ShineBorder>
         </BlurFade>
       </div>
-
       <div className="relative">
         <BlurFade inView className="mt-16 w-full">
           <ShineBorder className="flex w-[70%] flex-col items-start gap-10 bg-[#F1DED0] px-10 py-5 lg:w-[90%] lg:py-20 lg:pl-16 2xl:w-[75%]">
@@ -283,7 +283,7 @@ const page = () => {
           />
         </BlurFade>
       </div>
-      <div className="mt-20 mb-56 w-full">
+      <div className="mt-20 w-full">
         <div className="flex w-full justify-end px-10 lg:px-20">
           <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl">
             <BlurFade inView delay={0.2}>
@@ -337,6 +337,10 @@ const page = () => {
             </Button>
           </BlurFade>
         </div>
+        
+
+      </div>
+      <div>
       </div>
     </div>
   )

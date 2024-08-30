@@ -6,21 +6,17 @@ import {
   NavbarContent,
   NavbarItem,
   Link,
-  Button,
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
   Image,
 } from '@nextui-org/react'
 import {
-  Computer,
-  GalleryHorizontal,
   Home,
   Images,
   Info,
   Menu,
   Phone,
-  Users,
   X,
 } from 'lucide-react'
 import BlurFade from './magic-ui/BlurFade'
@@ -92,27 +88,31 @@ export default function Header() {
           icon={isMenuOpen ? <X /> : <Menu />}
         />
         <NavbarBrand>
-          <Image
-            src="logo.png"
-            width={100}
-            height={100}
-            alt="logo"
-            className="w-[50px] lg:w-auto"
-          />
+          <BlurFade inView>
+            <Image
+              src="logo.png"
+              width={100}
+              height={100}
+              alt="logo"
+              className="w-[50px] lg:w-auto"
+            />
+          </BlurFade>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden gap-10 lg:flex" justify="center">
         {menuItems.map((item, index) => (
-          <NavbarItem key={`${item}-${index}`} isActive={activeItem === item.name}>
-            <Link
-              href="#"
-              className={`text-black font-bold`}
-              onClick={() => handleItemClick(item.name)}
-            >
-              {item.name}
-            </Link>
-          </NavbarItem>
+          <BlurFade inView delay={0.2 + index * 0.2}>
+            <NavbarItem key={`${item}-${index}`} isActive={activeItem === item.name}>
+              <Link
+                href="#"
+                className={`text-black font-bold`}
+                onClick={() => handleItemClick(item.name)}
+              >
+                {item.name}
+              </Link>
+            </NavbarItem>
+          </BlurFade>
         ))}
       </NavbarContent>
       <NavbarMenu
