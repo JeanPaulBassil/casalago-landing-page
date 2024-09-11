@@ -1,349 +1,121 @@
 'use client'
-import React, { useState, useEffect } from 'react'
-import Header from '../_components/Header'
-import { Button, Image, Input, Textarea } from '@nextui-org/react'
-import { Check, MessageCircle, Phone, User, X } from 'lucide-react'
-import ShineBorder from '../_components/magic-ui/ShineBorder'
-import BlurFade from '../_components/magic-ui/BlurFade'
-import Footer from '../_components/Footer'
+import React from "react";
+import {Button} from "@nextui-org/react";
+import {Icon} from "@iconify/react";
+import {AnimatePresence, LazyMotion, domAnimation, m} from "framer-motion";
 
-const page = () => {
-  const [isLgScreen, setIsLgScreen] = useState(false)
-  const [isBelowSmScreen, setIsBelowSmScreen] = useState(false)
+import AppScreenshotSkewed from "../_components/AppScreenShotSkewed";
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsLgScreen(window.innerWidth >= 768)
-      setIsBelowSmScreen(window.innerWidth < 375)
-    }
-
-    handleResize()
-
-    window.addEventListener('resize', handleResize)
-
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
+export default function Component() {
   return (
-    <div className="">
-      <div style={{ backgroundImage: "url('/heroWoodBg.png')" }}>
-        <div className="py-16">
-          <BlurFade>
-            <ShineBorder className="w-[70%] flex-row bg-[#ffffff] p-10 lg:flex lg:w-[80%] lg:gap-12">
-              <div className="flex flex-col md:gap-12 lg:gap-16">
-                <div className="flex flex-col gap-12 md:gap-12 lg:gap-16">
-                  <span className="text-3xl lg:text-4xl xl:text-6xl">
-                    <BlurFade>
-                      SOLID <br /> WOOD <br /> PRODUCTS
-                    </BlurFade>
-                  </span>
-                  <BlurFade delay={0.2}>
-                    <span className="text-base lg:text-lg xl:text-xl">
-                      Oak, beech, ash <br /> and much more
-                    </span>
-                  </BlurFade>
-                  <BlurFade delay={0.4}>
-                    <Button
-                      radius="none"
-                      className="w-[120px] bg-[#173C6E] font-bold text-[#ffffff] md:w-[150px] lg:w-[200px]"
-                    >
-                      Contact Us
-                    </Button>
-                  </BlurFade>
-                </div>
-              </div>
-              <BlurFade delay={0.6}>
-                <div className="mt-0 hidden h-[1px] w-[80%] bg-[#000000] sm:-mt-28 md:-mt-40 lg:mt-0 lg:block lg:h-[340px] lg:w-[1px]"></div>
-              </BlurFade>
-              <div className="relative">
-                <BlurFade>
-                  <Image
-                    src="hero/1.png"
-                    className="relative bottom-80 left-72 w-[150px] lg:bottom-0 lg:w-[200px]"
-                    hidden={!isLgScreen}
-                  />
-                </BlurFade>
-                <BlurFade delay={0.2}>
-                  <Image
-                    src="hero/2.png"
-                    className="relative bottom-32 w-[150px] lg:bottom-0 lg:left-10 lg:top-10 lg:w-[200px]"
-                    hidden={!isLgScreen}
-                  />
-                </BlurFade>
-                <BlurFade delay={0.4}>
-                  <Image
-                    src="hero/3.png"
-                    className="relative bottom-10 left-72 w-[150px] lg:w-[200px]"
-                    hidden={!isLgScreen}
-                  />
-                </BlurFade>
-              </div>
-            </ShineBorder>
-          </BlurFade>
-        </div>
-      </div>
-      <div className="p-10 lg:p-16">
-        <span className="text-3xl lg:text-4xl xl:text-6xl">
-          <BlurFade inView={true}>
-            THE WOOD WE <br /> WORK WITH
-          </BlurFade>
-        </span>
-      </div>
-      <div className="flex flex-col items-center gap-10 md:items-start">
-        <BlurFade inView={true} className='w-full flex justify-center lg:justify-start'>
-          <div
-            style={{ backgroundImage: "url('woodWeWorkWith/1.png')" }}
-            className="flex h-auto w-auto flex-col items-center gap-4 rounded-xl px-10 pb-10 shadow-xl md:h-[150px] md:w-[100%] md:flex-row md:px-0 md:pb-0 lg:h-[220px] lg:w-[80%] lg:gap-10 xl:w-[1026px]"
-          >
-            <BlurFade inView={true}>
-              <div className="flex w-full items-center justify-center rounded-md bg-[#ffffff] px-7 py-2 xs:w-auto lg:px-16 lg:py-5">
-                <p className="text-base font-bold md:text-lg lg:text-xl">Oak</p>
-              </div>
-            </BlurFade>
-            <div className="flex w-full flex-col justify-center gap-2 xs:flex-row md:gap-10 lg:gap-20">
-              <div className="flex w-full flex-col justify-between gap-2 px-2 md:flex-row md:gap-0 lg:px-10">
-                <div className="flex items-center gap-2">
-                  <Check color="#79BF33" size={isLgScreen ? 35 : 25} />
-                  <p className="text-base text-[#ffffff] lg:text-xl">Waterproof</p>
-                </div>
-                <BlurFade inView={true} delay={0.4}>
-                  <div className="flex items-center gap-2">
-                    <Check color="#79BF33" size={isLgScreen ? 35 : 25} />
-                    <p className="text-base text-[#ffffff] lg:text-xl">Durability</p>
-                  </div>
-                </BlurFade>
-                <BlurFade inView={true} delay={0.6}>
-                  <div className="flex items-center gap-2">
-                    <Check color="#79BF33" size={isLgScreen ? 35 : 25} />
-                    <p className="text-base text-[#ffffff] lg:text-xl">Elegant</p>
-                  </div>
-                </BlurFade>
-              </div>
-            </div>
-          </div>
-        </BlurFade>
-        <BlurFade delay={0.2} inView className='w-full flex justify-center lg:justify-start'>
-          <div
-            style={{ backgroundImage: "url('woodWeWorkWith/2.png')" }}
-            className="flex h-auto w-auto flex-col items-center gap-4 rounded-xl px-12 pb-10 shadow-xl md:h-[150px] md:w-[100%] md:flex-row md:px-0 md:pb-0 lg:h-[220px] lg:w-[80%] lg:gap-10 xl:w-[1026px]"
-          >
-            <BlurFade>
-              <div className="flex w-full items-center justify-center rounded-md bg-[#825843] bg-opacity-50 px-7 py-2 xs:w-auto lg:px-16 lg:py-5">
-                <p className="text-base font-bold text-[#ffffff] md:text-lg lg:text-xl">Buk</p>
-              </div>
-            </BlurFade>
-            <div className="flex w-full flex-col justify-center gap-2 px-2 xs:flex-row md:gap-10 lg:gap-20">
-              <div className="flex w-full flex-col justify-between gap-2 md:flex-row md:gap-0 lg:px-10">
-                <BlurFade inView={true} delay={0.2}>
-                  <div className="flex items-center gap-2">
-                    <Check color="#79BF33" size={isLgScreen ? 35 : 25} />
-                    <p className="text-base text-[#000000] lg:text-xl">Density</p>
-                  </div>
-                </BlurFade>
-                <BlurFade inView={true} delay={0.4}>
-                  <div className="flex items-center gap-2">
-                    <Check color="#79BF33" size={isLgScreen ? 35 : 25} />
-                    <p className="text-base text-[#000000] lg:text-xl">Grain</p>
-                  </div>
-                </BlurFade>
-                <BlurFade inView={true} delay={0.6}>
-                  <div className="flex items-center gap-2">
-                    <Check color="#79BF33" size={isLgScreen ? 35 : 25} />
-                    <p className="text-base text-[#000000] lg:text-xl">Versatile</p>
-                  </div>
-                </BlurFade>
-              </div>
-            </div>
-          </div>
-        </BlurFade>
-        <BlurFade delay={0.4} inView className='w-full flex justify-center lg:justify-start'>
-          <div
-            style={{ backgroundImage: "url('woodWeWorkWith/3.png')" }}
-            className="flex h-auto w-auto flex-col items-center gap-4 rounded-xl px-10 pb-10 shadow-xl md:h-[150px] md:w-[100%] md:flex-row md:gap-0 md:px-0 md:pb-0 lg:h-[210px] lg:w-[80%] lg:gap-10 xl:w-[1026px]"
-          >
-            <BlurFade>
-              <div className="flex w-full items-center justify-center rounded-md bg-[#825843] bg-opacity-50 px-7 py-2 xs:w-auto lg:px-16 lg:py-5">
-                <p className="text-base font-bold text-[#ffffff] md:text-lg lg:text-xl">Ash</p>
-              </div>
-            </BlurFade>
-            <div className="flex w-full flex-col justify-center gap-2 px-2 xs:flex-row md:gap-10 lg:gap-20">
-              <div className="flex h-full w-full flex-col justify-between gap-2 md:flex-row md:gap-0 lg:px-10">
-                <BlurFade inView={true} delay={0.2}>
-                  <div className="flex items-center gap-2">
-                    <Check color="#79BF33" size={isLgScreen ? 35 : 25} />
-                    <p className="text-base text-[#000000] lg:text-xl">Strength</p>
-                  </div>
-                </BlurFade>
-                <BlurFade inView={true} delay={0.4}>
-                  <div className="flex items-center gap-2">
-                    <Check color="#79BF33" size={isLgScreen ? 35 : 25} />
-                    <p className="text-base text-[#000000] lg:text-xl">Grain</p>
-                  </div>
-                </BlurFade>
-                <BlurFade inView={true} delay={0.6}>
-                  <div className="flex items-center gap-2">
-                    <Check color="#79BF33" size={isLgScreen ? 35 : 25} />
-                    <p className="text-base text-[#000000] lg:text-xl">Workability</p>
-                  </div>
-                </BlurFade>
-              </div>
-            </div>
-          </div>
-        </BlurFade>
-      </div>
-      <div
-        style={{ backgroundImage: "url('/heroWoodBg.png')" }}
-        className="mt-5 flex w-full items-center justify-end py-20"
-      >
-        <BlurFade inView className="w-[80%]">
-          <ShineBorder className="bg-[#ffffff]">
-            <div className="flex flex-col gap-10 p-5 md:p-10 lg:p-16">
-              <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl">
-                <BlurFade inView>
-                  ADVANTAGES OF <br /> OF WORKING WITH US
-                </BlurFade>
-              </span>
-              <div className="flex flex-col gap-[5%] lg:flex-row">
-                <BlurFade inView delay={0.2}>
-                  <Image
-                    src="advantagesPicture.png"
-                    className="hidden h-full object-cover lg:block xl:w-[100%]"
-                  />
-                </BlurFade>
-                <BlurFade inView delay={0.2}>
-                  <Image
-                    src="advantagesPicture.png"
-                    className="block max-h-[200px] object-cover lg:hidden xl:w-[100%]"
-                  />
-                </BlurFade>
-                <div className="mt-5 flex h-full flex-col justify-between gap-5 text-center lg:mt-0 lg:gap-10 lg:text-start">
-                  <BlurFade inView delay={0.2}>
-                    <p className="text-base lg:text-lg xl:text-2xl">
-                      Personalized solutions prioritize your satisfaction.
-                    </p>
-                  </BlurFade>
-                  <BlurFade inView delay={0.4}>
-                    <p className="text-base lg:text-lg xl:text-2xl">
-                      Premium materials ensure exceptional results.
-                    </p>
-                  </BlurFade>
-                  <BlurFade inView delay={0.6}>
-                    <p className="text-base lg:text-lg xl:text-2xl">
-                      Over 40 years of industry excellence.
-                    </p>
-                  </BlurFade>
-                </div>
-              </div>
-              <BlurFade inView delay={0.8} className="m-auto">
-                <Button
-                  radius="sm"
-                  className="m-auto max-w-[300px] bg-[#728BAD] px-5 font-bold text-[#ffffff] sm:px-10 lg:m-0"
+    <>
+      <main className="container mx-auto mt-[80px] flex max-w-[1024px] flex-col items-start px-8">
+        <section className="z-20 flex flex-col items-start justify-center gap-[18px] sm:gap-6">
+          <LazyMotion features={domAnimation}>
+            <m.div
+              animate="kick"
+              className="flex flex-col gap-6"
+              exit="auto"
+              initial="auto"
+              transition={{
+                duration: 0.25,
+                ease: "easeInOut",
+              }}
+              variants={{
+                auto: {width: "auto"},
+                kick: {width: "auto"},
+              }}
+            >
+              <AnimatePresence mode="wait">
+                <m.div
+                  animate={{filter: "blur(0px)", opacity: 1, x: 0}}
+                  className="text-start text-[clamp(40px,10vw,44px)] font-bold leading-[1.2] tracking-tighter sm:text-[64px]"
+                  initial={{filter: "blur(16px)", opacity: 0, x: 15 + 1 * 2}}
+                  transition={{
+                    bounce: 0,
+                    delay: 0.01 * 10,
+                    duration: 0.8 + 0.1 * 8,
+                    type: "spring",
+                  }}
                 >
-                  Receive A Quote
-                </Button>
-              </BlurFade>
-            </div>
-          </ShineBorder>
-        </BlurFade>
-      </div>
-      <div className="relative">
-        <BlurFade inView className="mt-16 w-full">
-          <ShineBorder className="flex w-[70%] flex-col items-start gap-10 bg-[#F1DED0] px-10 py-5 lg:w-[90%] lg:py-20 lg:pl-16 2xl:w-[75%]">
-            <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl">
-              <BlurFade inView delay={0.2}>
-                ABOUT US
-              </BlurFade>
-            </span>
-            <BlurFade inView delay={0.5}>
-              <p className="max-w-[300px] text-sm md:text-base lg:max-w-[350px] lg:text-lg xl:max-w-[470px] xl:text-2xl">
-                Al Mouhawess Wood - We specialize in crafting high-quality wood products tailored to
-                your specifications. From custom furniture like chairs, tables, and wardrobes to
-                unique architectural elements, our workshop is equipped with state-of-the-art
-                industrial equipment to bring your visions to life.
-              </p>
-            </BlurFade>
-          </ShineBorder>
-        </BlurFade>
-        <BlurFade inView delay={0.4} className="absolute left-[67%] top-[10%] 2xl:left-[57%]">
-          <Image
-            src="AboutUs/2.png"
-            className="hidden h-[100px] object-cover lg:block lg:h-[150px] xl:h-full xl:w-[100%]"
-          />
-        </BlurFade>
-        <BlurFade inView delay={0.8} className="absolute left-[50%] top-[25%] 2xl:left-[40%]">
-          <Image
-            src="AboutUs/1.png"
-            className="hidden h-[200px] object-cover lg:block lg:h-[250px] xl:h-[300px] xl:w-[100%]"
-          />
-        </BlurFade>
-        <BlurFade inView delay={1} className="absolute left-[65%] top-[60%] 2xl:left-[55%]">
-          <Image
-            src="AboutUs/3.png"
-            className="hidden h-[100px] object-cover lg:block lg:h-[150px] xl:h-full xl:w-[100%]"
-          />
-        </BlurFade>
-      </div>
-      <div className="mt-20 w-full">
-        <div className="flex w-full justify-end px-10 lg:px-20">
-          <span className="text-2xl sm:text-3xl lg:text-4xl xl:text-6xl">
-            <BlurFade inView delay={0.2}>
-              Any questions?
-            </BlurFade>
-          </span>
-        </div>
-        <div className="mt-10 flex w-full flex-col items-end justify-between gap-5 px-10 lg:px-20">
-          <BlurFade inView delay={0.4} className="w-full flex justify-end">
-            <Input
-              placeholder="Your Name"
-              className="w-full lg:w-[400px]"
-              radius="sm"
-              variant="bordered"
-              classNames={{
-                inputWrapper: 'px-0',
-                innerWrapper: 'px-2',
-              }}
-              startContent={<User />}
-            />
-          </BlurFade>
-          <BlurFade inView delay={0.6} className="w-full flex justify-end">
-            <Input
-              placeholder="Your Phone Number"
-              className="w-full lg:w-[400px]"
-              radius="sm"
-              variant="bordered"
-              classNames={{
-                inputWrapper: 'px-0',
-                innerWrapper: 'px-2',
-              }}
-              startContent={<Phone />}
-            />
-          </BlurFade>
-          <BlurFade inView delay={0.8} className="w-full flex justify-end">
-            <Textarea
-              placeholder="Your Question"
-              className="w-full lg:w-[400px]"
-              radius="sm"
-              variant="bordered"
-              classNames={{
-                inputWrapper: 'p-0',
-                innerWrapper: 'py-2 px-2',
-              }}
-              startContent={<MessageCircle />}
-            />
-          </BlurFade>
-          <BlurFade inView delay={1} className="w-full flex justify-end">
-            <Button className="w-[100px] bg-[#728BAD] font-bold text-[#ffffff]" radius="sm">
-              Send
-            </Button>
-          </BlurFade>
-        </div>
-        
+                  <div className="bg-hero-section-title bg-clip-text text-transparent dark:from-[#FFFFFF] dark:to-[#FFFFFF66]">
+                    Discover Our Exclusive <br /> Collection of Luxury Furniture
+                  </div>
+                </m.div>
 
-      </div>
-      <div>
-      </div>
-    </div>
-  )
+                <m.div
+                  animate={{filter: "blur(0px)", opacity: 1, x: 0}}
+                  className="text-start font-normal leading-7 text-default-500 sm:w-[466px] sm:text-[18px]"
+                  initial={{filter: "blur(16px)", opacity: 0, x: 15 + 1 * 3}}
+                  transition={{
+                    bounce: 0,
+                    delay: 0.01 * 30,
+                    duration: 0.8 + 0.1 * 9,
+                    type: "spring",
+                  }}
+                >
+                  Casalago is a furniture company that specializes in creating
+                  high-quality, stylish furniture for the home and office. We are
+                  committed to providing our customers with the best possible
+                  experience.
+                </m.div>
+
+                <m.div
+                  animate={{filter: "blur(0px)", opacity: 1, x: 0}}
+                  className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6"
+                  initial={{filter: "blur(16px)", opacity: 0, x: 15 + 1 * 4}}
+                  transition={{
+                    bounce: 0,
+                    delay: 0.01 * 50,
+                    duration: 0.8 + 0.1 * 10,
+                    type: "spring",
+                  }}
+                >
+                  <Button
+                    className="h-10 w-[163px] bg-default-foreground px-[16px] py-[10px] text-small font-medium leading-5 text-background"
+                    radius="full"
+                  >
+                    Get To Know Us
+                  </Button>
+                  <Button
+                    className="h-10 w-[163px] border-1 border-default-100 px-[16px] py-[10px] text-small font-medium leading-5"
+                    endContent={
+                      <span className="pointer-events-none flex h-[22px] w-[22px] items-center justify-center rounded-full bg-default-100">
+                        <Icon
+                          className="text-default-500 [&>path]:stroke-[1.5]"
+                          icon="solar:arrow-right-linear"
+                          width={16}
+                        />
+                      </span>
+                    }
+                    radius="full"
+                    variant="bordered"
+                  >
+                    View Our Products
+                  </Button>
+                </m.div>
+              </AnimatePresence>
+            </m.div>
+          </LazyMotion>
+        </section>
+      </main>
+      <LazyMotion features={domAnimation}>
+        <AnimatePresence mode="wait">
+          <m.div
+            animate={{filter: "blur(0px)", opacity: 1, y: 0}}
+            className="absolute top-[40%] w-full"
+            initial={{filter: "blur(16px)", opacity: 0, y: 300}}
+            transition={{
+              bounce: 0,
+              delay: 0.01 * 10,
+              duration: 0.8 + 0.1 * 8,
+              type: "spring",
+            }}
+          >
+            <AppScreenshotSkewed className="w-full" />
+          </m.div>
+        </AnimatePresence>
+      </LazyMotion>
+    </>
+  );
 }
-
-export default page

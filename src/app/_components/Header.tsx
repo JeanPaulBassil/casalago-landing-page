@@ -1,140 +1,77 @@
 'use client'
-import React, { useState } from 'react'
+
+import type { NavbarProps } from '@nextui-org/react'
+
+import React from 'react'
 import {
   Navbar,
   NavbarBrand,
   NavbarContent,
   NavbarItem,
-  Link,
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-  Image,
+  Link,
+  Divider,
 } from '@nextui-org/react'
-import {
-  Home,
-  Images,
-  Info,
-  Menu,
-  Phone,
-  X,
-} from 'lucide-react'
+import { cn } from '@nextui-org/react'
+import { Home, Menu, X } from 'lucide-react'
 import BlurFade from './magic-ui/BlurFade'
+const menuItems = ['Home', 'Products']
 
-export default function Header() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [activeItem, setActiveItem] = useState('Home')
-
-  //   const menuItems = ['Home', 'Our Services', 'Our Clients', 'About Us']
-  const menuItems = [
-    {
-      name: 'Home',
-      icon: <Home />,
-    },
-    {
-      name: 'Products',
-      icon: <Images />,
-    },
-    {
-      name: 'Contact Us',
-      icon: <Phone />,
-    },
-    {
-      name: 'About Us',
-      icon: <Info />,
-    },
-  ]
-
-  const handleItemClick = (item: string) => {
-    setActiveItem(item)
-  }
+export default function Component(props: NavbarProps) {
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false)
 
   return (
     <Navbar
-      maxWidth="full"
-      onMenuOpenChange={setIsMenuOpen}
-      style={{
-        backgroundColor: 'transparent',
-        boxShadow: 'none',
-      }}
-      className="py-2 lg:py-10"
+      {...props}
       classNames={{
-        item: [
-          'flex',
-          'relative',
-          'h-full',
-          'items-center',
-          "after:content-['']",
-          'after:absolute',
-          'after:bottom-0',
-          'after:h-[2px]',
-          'after:rounded-[2px]',
-          'after:bg-blackHaze-950',
-          'after:left-1/2',
-          'after:transform',
-          'after:-translate-x-1/2',
-          'after:w-0',
-          'after:transition-all',
-          'after:duration-200',
-          'after:ease-in-out',
-          'data-[active=true]:after:w-full',
-        ],
+        base: cn('border-default-100', {
+          'bg-default-200/50 dark:bg-default-100/50': isMenuOpen,
+        }),
+        wrapper: 'w-full justify-center',
+        item: 'hidden md:flex',
       }}
+      height="60px"
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
     >
-      <NavbarContent>
-        <NavbarMenuToggle
-          aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className="lg:hidden"
-          icon={isMenuOpen ? <X /> : <Menu />}
-        />
-        <NavbarBrand>
-          <BlurFade inView>
-            <Image
-              src="logo.png"
-              width={100}
-              height={100}
-              alt="logo"
-              className="w-[50px] lg:w-auto"
-            />
-          </BlurFade>
-        </NavbarBrand>
+      {/* Left Content */}
+      <NavbarBrand>
+        <BlurFade inView delay={0.5} className="mt-4 flex gap-2">
+          <Home strokeWidth={2.5} />
+          <span className="text-xl font-bold">CASALAGO</span>
+        </BlurFade>
+      </NavbarBrand>
+
+      {/* Center Content */}
+      <NavbarContent justify="center">
+        <NavbarItem>
+          <Link className="text-default-500" href="#" size="sm">
+            Home
+          </Link>
+        </NavbarItem>
+
+        <NavbarItem>
+          <Link className="text-default-500" href="/products" size="sm">
+            Products
+          </Link>
+        </NavbarItem>
       </NavbarContent>
 
-      <NavbarContent className="hidden gap-10 lg:flex" justify="center">
+      <NavbarMenuToggle
+        className="text-default-400 md:hidden"
+        icon={isMenuOpen ? <X /> : <Menu color="black" />}
+      />
+
+      <NavbarMenu className="top-[calc(var(--navbar-height)_-_1px)] max-h-fit bg-default-200/50 pb-6 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50">
         {menuItems.map((item, index) => (
-          <BlurFade inView delay={0.2 + index * 0.2}>
-            <NavbarItem key={`${item}-${index}`} isActive={activeItem === item.name}>
-              <Link
-                href="#"
-                className={`text-black font-bold`}
-                onClick={() => handleItemClick(item.name)}
-              >
-                {item.name}
-              </Link>
-            </NavbarItem>
-          </BlurFade>
-        ))}
-      </NavbarContent>
-      <NavbarMenu
-        className="mt-4 lg:mt-20"
-        style={{
-          backgroundColor: 'transparent',
-        }}
-      >
-        {menuItems.map((item, index) => (
-          <BlurFade key={`${item}-${index}`}>
-            <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color="foreground"
-                className="flex w-full items-center gap-2"
-                href="#"
-                size="lg"
-              >
-                {item.icon}
-                <p>{item.name}</p>
-              </Link>
-            </NavbarMenuItem>
-          </BlurFade>
+          <NavbarMenuItem key={`${item}-${index}`}>
+            <Link className="mb-2 w-full text-default-500" href="#" size="md">
+              {item}
+            </Link>
+            {index < menuItems.length - 1 && <Divider className="opacity-50" />}
+          </NavbarMenuItem>
         ))}
       </NavbarMenu>
     </Navbar>
