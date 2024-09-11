@@ -1,6 +1,6 @@
 'use client'
 import React from 'react'
-import { Button } from '@nextui-org/react'
+import { Button, Image } from '@nextui-org/react'
 import { Icon } from '@iconify/react'
 import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion'
 
@@ -99,37 +99,63 @@ export default function Component() {
           </LazyMotion>
         </section>
       </main>
-      <LazyMotion features={domAnimation}>
-        <AnimatePresence mode="wait">
-          <m.div
-            animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
-            className="absolute top-[40%] w-full"
-            initial={{ filter: 'blur(16px)', opacity: 0, y: 300 }}
-            transition={{
-              bounce: 0,
-              delay: 0.01 * 10,
-              duration: 0.8 + 0.1 * 8,
-              type: 'spring',
-            }}
-          >
-            <AppScreenshotSkewed className="w-full hidden md:block" />
-          </m.div>
-        </AnimatePresence>
-      </LazyMotion>
-      <div className="mt-4 flex w-full flex-col justify-between gap-4 bg-[#ABC485] md:mt-72 md:flex-row md:gap-0 p-4 md:p-24">
+
+      <div className="mt-4 flex w-full flex-col justify-between gap-4 bg-[#ABC485] p-4 md:mt-72 md:flex-row md:gap-0 md:p-24">
+        <LazyMotion features={domAnimation}>
+          <AnimatePresence mode="wait">
+            <m.div
+              animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
+              className="absolute top-[23%] w-full"
+              initial={{ filter: 'blur(16px)', opacity: 0, y: 300 }}
+              transition={{
+                bounce: 0,
+                delay: 0.01 * 10,
+                duration: 0.8 + 0.1 * 8,
+                type: 'spring',
+              }}
+            >
+              <AppScreenshotSkewed className="hidden w-full md:block" />
+            </m.div>
+          </AnimatePresence>
+        </LazyMotion>
         <BlurFade inView delay={0.5} className="w-full md:w-1/2">
-          <h1 className="z-50 px-4 text-center md:text-start text-3xl font-bold text-[#ffffff] md:px-24">
+          <h1 className="z-50 px-4 text-center text-3xl font-bold text-[#ffffff] md:px-24 md:text-start">
             Your very own personal living space.
           </h1>
         </BlurFade>
         <BlurFade inView delay={0.7} className="w-full md:w-1/2">
-          <p className="z-50 px-4 text-center md:text-start text-[#ffffff] md:px-24">
+          <p className="z-50 px-4 text-center text-[#ffffff] md:px-24 md:text-start">
             Casalago believes that a home is not just a place, but a reflection of who you are.
             Understanding that each home is an individual expression of the people who live in it.
             With our carefuly curated design furniture and accessories, we invite you to experience
             a new level of living beter at home.
           </p>
         </BlurFade>
+      </div>
+      <div className="mt-10 flex w-full flex-col justify-between gap-4 p-4 md:flex-row md:gap-0">
+        <BlurFade inView delay={0.5} className="w-full md:w-1/2">
+          <Image
+            src="liveBetter.webp"
+            radius="sm"
+            alt="image-1"
+            width={700}
+            height={700}
+            className="h-[400px] w-[600px] object-cover"
+          />
+        </BlurFade>
+        <div className="flex w-full flex-col justify-center gap-4 md:w-1/2">
+          <BlurFade inView delay={0.5}>
+            <h1 className="text-3xl font-bold">Live better, feel better.</h1>
+          </BlurFade>
+          <BlurFade inView delay={0.7}>
+            <p>
+              Casalago believes that a home is not just a place, but a reflection of who you are.
+              Understanding that each home is an individual expression of the people who live in it.
+              With our carefuly curated design furniture and accessories, we invite you to
+              experience a new level of living beter at home.
+            </p>
+          </BlurFade>
+        </div>
       </div>
     </>
   )
