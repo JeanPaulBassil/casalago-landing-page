@@ -23,7 +23,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <ReactQueryClientProvider>
           <NextUIProvider>
-            <div className="relative flex h-screen min-h-dvh w-full flex-col overflow-hidden bg-background">
+            <div className="relative flex min-h-dvh w-full flex-col overflow-hidden bg-background">
               <Header />
               {children}
             </div>
