@@ -47,7 +47,7 @@ export default function Component(props: NavbarProps) {
       {/* Center Content */}
       <NavbarContent justify="center">
         <NavbarItem>
-          <Link className="text-default-500" href="#" size="sm">
+          <Link className="text-default-500" href="/" size="sm">
             Home
           </Link>
         </NavbarItem>
@@ -67,7 +67,11 @@ export default function Component(props: NavbarProps) {
       <NavbarMenu className="top-[calc(var(--navbar-height)_-_1px)] max-h-fit bg-default-200/50 pb-6 pt-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50">
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="mb-2 w-full text-default-500" href="#" size="md">
+            <Link
+              className="mb-2 w-full text-default-500"
+              href={`/${item === 'Home' ? '' : item.toLowerCase()}`}
+              size="md"
+            >
               {item}
             </Link>
             {index < menuItems.length - 1 && <Divider className="opacity-50" />}

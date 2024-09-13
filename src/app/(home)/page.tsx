@@ -6,6 +6,59 @@ import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion'
 
 import AppScreenshotSkewed from '../_components/AppScreenShotSkewed'
 import BlurFade from '../_components/magic-ui/BlurFade'
+import { cn } from '@/lib/utils'
+import PlaceListItem from '../_components/PlaceListItem'
+
+const places = [
+  {
+    id: 1,
+    name: 'Baxter',
+    imageSrc: 'products/baxter.jpg',
+    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+  },
+  {
+    id: 2,
+    name: 'Cassina',
+    imageSrc: 'products/cassina.jpg',
+    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+  },
+  {
+    id: 3,
+    name: 'CC-Tapis',
+    imageSrc: 'products/cc-tapis.jpg',
+    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+  },
+  {
+    id: 4,
+    name: 'Edra',
+    imageSrc: 'products/Edra.jpeg',
+    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+  },
+  {
+    id: 5,
+    name: 'Flexform',
+    imageSrc: 'products/flexform.jpg',
+    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+  },
+  {
+    id: 6,
+    name: 'Henge',
+    imageSrc: 'products/henge.jpg',
+    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+  },
+  {
+    id: 7,
+    name: 'Paopla Lengti',
+    imageSrc: 'products/paoplaLengti.jpg',
+    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+  },
+  {
+    id: 8,
+    name: 'USM Modular Furniture',
+    imageSrc: 'products/USMModularFurniture.jpg',
+    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+  },
+]
 
 export default function Component() {
   return (
@@ -105,7 +158,7 @@ export default function Component() {
           <AnimatePresence mode="wait">
             <m.div
               animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
-              className="absolute top-[23%] w-full"
+              className="absolute top-[10.1%] w-full"
               initial={{ filter: 'blur(16px)', opacity: 0, y: 300 }}
               transition={{
                 bounce: 0,
@@ -156,6 +209,18 @@ export default function Component() {
             </p>
           </BlurFade>
         </div>
+      </div>
+      <div className="mt-10 flex w-full flex-col p-4 gap-4 md:flex-row md:gap-0">
+        <BlurFade inView delay={0.5}>
+          <h1 className="text-3xl font-bold text-center">Our Brands</h1>
+          <div className="mt-7 my-auto grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+            {places.map((place, index) => (
+              <BlurFade inView delay={0.5 + 0.2 * index}>
+                <PlaceListItem key={place.id} {...place} />
+              </BlurFade>
+            ))}
+          </div>
+        </BlurFade>
       </div>
     </>
   )

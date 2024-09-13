@@ -5,6 +5,7 @@ import { NextUIProvider } from '@nextui-org/system'
 import { Toaster } from 'react-hot-toast'
 import ReactQueryClientProvider from '@/providers/ReactQueryProvider'
 import Header from './_components/Header'
+import Footer from './_components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
             <div className="relative flex min-h-dvh w-full flex-col overflow-hidden bg-background">
               <Header />
               {children}
+              <Footer />
             </div>
             <Toaster position="top-right" />
           </NextUIProvider>
