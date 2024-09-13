@@ -13,8 +13,7 @@ export type PlaceListItemColor = {
 export type PlaceItem = {
   id: string
   name: string
-  href: string
-  price: number
+  hre?: string
   isNew?: boolean
   rating?: number
   ratingCount?: number
@@ -30,7 +29,7 @@ export type PlaceListItemProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'id'
 
 const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
   (
-    { name, price, rating, isLoading, description, imageSrc, removeWrapper, className, ...props },
+    { name, rating, isLoading, description, imageSrc, removeWrapper, className, ...props },
     ref
   ) => {
     const [isLiked, setIsLiked] = React.useState(false)
@@ -57,7 +56,6 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
           radius="sm"
           width="100%"
           height="auto"
-          objectFit="cover"
         />
 
         <div className="mt-1 flex flex-col gap-2 px-1">

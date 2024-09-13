@@ -14,49 +14,65 @@ const places = [
     id: 1,
     name: 'Baxter',
     imageSrc: 'products/baxter.jpg',
-    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+    description:
+      'Baxter creates unique, luxurious furniture with a contemporary and innovative design, blending craftsmanship with modern aesthetics.',
+    href: 'https://www.baxter.it',
   },
   {
     id: 2,
     name: 'Cassina',
     imageSrc: 'products/cassina.jpg',
-    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+    description:
+      'Cassina is renowned for its innovative, high-quality furniture that reflects a rich Italian heritage and modern design philosophy.',
+    href: 'https://www.cassina.com',
   },
   {
     id: 3,
     name: 'CC-Tapis',
     imageSrc: 'products/cc-tapis.jpg',
-    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+    description:
+      'CC-Tapis offers hand-knotted contemporary rugs crafted with sustainable materials and artisanal techniques in Nepal.',
+    href: 'https://www.cc-tapis.com',
   },
   {
     id: 4,
     name: 'Edra',
     imageSrc: 'products/Edra.jpeg',
-    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+    description:
+      'Edra combines traditional craftsmanship with cutting-edge technology to create unique, high-end furniture pieces.',
+    href: 'https://www.edra.com',
   },
   {
     id: 5,
     name: 'Flexform',
     imageSrc: 'products/flexform.jpg',
-    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+    description:
+      'Flexform specializes in elegantly designed, timeless furniture collections that prioritize comfort and quality materials.',
+    href: 'https://www.flexform.it',
   },
   {
     id: 6,
     name: 'Henge',
     imageSrc: 'products/henge.jpg',
-    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+    description:
+      'Henge produces bespoke furniture and lighting solutions that embody contemporary style with artisanal craftsmanship.',
+    href: 'https://www.hengesrl.com',
   },
   {
     id: 7,
-    name: 'Paopla Lengti',
+    name: 'Paola Lenti',
     imageSrc: 'products/paoplaLengti.jpg',
-    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+    description:
+      'Paola Lenti is known for its vibrant, innovative outdoor and indoor furniture, blending unique materials with contemporary design.',
+    href: 'https://www.paolalenti.it',
   },
   {
     id: 8,
     name: 'USM Modular Furniture',
     imageSrc: 'products/USMModularFurniture.jpg',
-    description: 'Casalago believes that a home is not just a place, but a reflection of who you are.',
+    description:
+      'USM Modular Furniture creates versatile, modular furniture systems that adapt to various spaces and uses, offering sustainability and style.',
+    href: 'https://www.usm.com',
   },
 ]
 
@@ -210,13 +226,13 @@ export default function Component() {
           </BlurFade>
         </div>
       </div>
-      <div className="mt-10 flex w-full flex-col p-4 gap-4 md:flex-row md:gap-0">
+      <div className="mt-10 flex w-full flex-col gap-4 p-4 md:flex-row md:gap-0">
         <BlurFade inView delay={0.5}>
-          <h1 className="text-3xl font-bold text-center">Our Brands</h1>
-          <div className="mt-7 my-auto grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+          <h1 className="text-center text-3xl font-bold">Our Brands</h1>
+          <div className="my-auto mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
             {places.map((place, index) => (
               <BlurFade inView delay={0.5 + 0.2 * index}>
-                <PlaceListItem key={place.id} {...place} />
+                <PlaceListItem key={place.id} {...place} id={place.id.toString()} />
               </BlurFade>
             ))}
           </div>
