@@ -10,8 +10,8 @@ import Footer from './_components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Al-Mouhawess Woods',
-  description: 'Discover the finest quality wood products in Lebanon',
+  title: 'Casalago',
+  description: 'Discover the finest quality furniture and accessories in Lebanon',
 }
 
 export default function RootLayout({
