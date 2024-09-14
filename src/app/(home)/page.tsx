@@ -229,7 +229,7 @@ export default function Component() {
       <div className="mt-10 flex w-full flex-col gap-4 p-4 md:flex-row md:gap-0">
         <BlurFade inView delay={0.5}>
           <h1 className="text-center text-3xl font-bold">Our Brands</h1>
-          <div className="my-auto mt-7 grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+          <div className="my-auto mt-7 grid grid-cols-1 gap-5 md::grid-cols-2 lg:grid-cols-3">
             {places.map((place, index) => (
               <BlurFade inView delay={0.5 + 0.2 * index}>
                 <PlaceListItem key={place.id} {...place} id={place.id.toString()} />
