@@ -37,13 +37,13 @@ export default function Component() {
     ({ title, items }: { title: string; items: { name: string; href: string }[] }) => (
       <div>
         <BlurFade inView delay={0.5}>
-          <h3 className="text-small font-semibold text-default-600">{title}</h3>
+          <h3 className="text-small font-semibold text-[#ffffff]">{title}</h3>
         </BlurFade>
         <ul className="mt-6 space-y-4">
           {items.map((item, index) => (
             <BlurFade inView delay={0.7 + 0.2 * index}>
               <li key={item.name}>
-                <Link className="text-[#ffffffm]" href={item.href} size="sm">
+                <Link className="text-[#ffffff]" href={item.href} size="sm">
                   {item.name}
                 </Link>
               </li>
@@ -66,7 +66,7 @@ export default function Component() {
                 <span className="h-7 text-2xl font-bold text-[#000000]">CASALAGO</span>
               </BlurFade>
             </div>
-            <BlurFade inView delay={0.7} className="flex items-center gap-2">
+            <BlurFade inView delay={0.7} className="flex items-center gap-2 text-[#ffffff]">
               © 2024 Casalago - All rights reserved
             </BlurFade>
             <div className="flex space-x-6">
