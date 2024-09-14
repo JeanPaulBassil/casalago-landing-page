@@ -25,24 +25,9 @@ const footerNavigation = {
   ],
   social: [
     {
-      name: 'Facebook',
-      href: '#',
-      icon: (props: SocialIconProps) => <Icon {...props} icon="fontisto:facebook" />,
-    },
-    {
       name: 'Instagram',
-      href: '#',
+      href: 'https://www.instagram.com/casalago.ng/',
       icon: (props: SocialIconProps) => <Icon {...props} icon="fontisto:instagram" />,
-    },
-    {
-      name: 'Twitter',
-      href: '#',
-      icon: (props: SocialIconProps) => <Icon {...props} icon="fontisto:twitter" />,
-    },
-    {
-      name: 'GitHub',
-      href: '#',
-      icon: (props: SocialIconProps) => <Icon {...props} icon="fontisto:github" />,
     },
   ],
 }
