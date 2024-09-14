@@ -13,6 +13,7 @@ import {
   NavbarMenuToggle,
   Link,
   Divider,
+  Image,
 } from '@nextui-org/react'
 import { cn } from '@nextui-org/react'
 import { Home, Menu, X } from 'lucide-react'
@@ -38,9 +39,11 @@ export default function Component(props: NavbarProps) {
     >
       {/* Left Content */}
       <NavbarBrand>
-        <BlurFade inView delay={0.5} className="mt-4 flex gap-2">
-          <Home strokeWidth={2.5} />
-          <span className="text-xl font-bold">CASALAGO</span>
+        <BlurFade inView delay={0.5}>
+          <Link href="/" className="mt-4 flex items-end gap-2">
+            <Image src="/logo.png" alt="Casalago" width={30} height={30} radius="none" />
+            <span className="text-2xl font-bold text-[#000000] h-7">CASALAGO</span>
+          </Link>
         </BlurFade>
       </NavbarBrand>
 
