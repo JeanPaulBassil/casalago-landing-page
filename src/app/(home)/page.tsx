@@ -169,7 +169,7 @@ export default function Component() {
         </section>
       </main>
 
-      <div className="mt-4 flex w-full flex-col justify-between gap-4 bg-[#ABC485] p-4 md:mt-72 md:flex-row md:gap-0 md:p-24">
+      <div className="mt-4 flex w-full flex-col justify-between gap-4 bg-[#ABC485] p-4 md:mt-72 md:flex-row md:gap-0 xl:p-24">
         <LazyMotion features={domAnimation}>
           <AnimatePresence mode="wait">
             <m.div
@@ -188,12 +188,12 @@ export default function Component() {
           </AnimatePresence>
         </LazyMotion>
         <BlurFade inView delay={0.5} className="w-full md:w-1/2">
-          <h1 className="z-50 px-4 text-center text-3xl font-bold text-[#ffffff] md:px-24 md:text-start">
+          <h1 className="z-50 px-4 text-center text-3xl font-bold text-[#ffffff] lg:px-24 md:text-start">
             Your very own personal living space.
           </h1>
         </BlurFade>
         <BlurFade inView delay={0.7} className="w-full md:w-1/2">
-          <p className="z-50 px-4 text-center text-[#ffffff] md:px-24 md:text-start">
+          <p className="z-50 px-4 text-center text-[#ffffff] lg:px-24 md:text-start">
             Casalago believes that a home is not just a place, but a reflection of who you are.
             Understanding that each home is an individual expression of the people who live in it.
             With our carefuly curated design furniture and accessories, we invite you to experience

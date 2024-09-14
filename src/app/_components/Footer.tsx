@@ -3,7 +3,7 @@
 import type { IconProps } from '@iconify/react'
 
 import React from 'react'
-import { Divider, Link } from '@nextui-org/react'
+import { Divider, Image, Link } from '@nextui-org/react'
 import { Icon } from '@iconify/react'
 import BlurFade from './magic-ui/BlurFade'
 import { Copyright, Home } from 'lucide-react'
@@ -59,7 +59,7 @@ export default function Component() {
             <BlurFade inView delay={0.7 + 0.2 * index}>
               <li key={item.name}>
                 <Link className="text-[#ffffffm]" href={item.href} size="sm">
-                {item.name}
+                  {item.name}
                 </Link>
               </li>
             </BlurFade>
@@ -77,19 +77,19 @@ export default function Component() {
           <div className="space-y-8 md:pr-8">
             <div className="flex items-center justify-start">
               <BlurFade inView delay={0.5} className="mt-4 flex gap-2">
-                <Home strokeWidth={2.5} />
-                <span className="text-xl font-bold">CASALAGO</span>
+                <Image src="/logo.png" alt="Casalago" width={30} height={30} radius="none" />
+                <span className="h-7 text-2xl font-bold text-[#000000]">CASALAGO</span>
               </BlurFade>
             </div>
             <BlurFade inView delay={0.7} className="flex items-center gap-2">
-            © 2024 Casalago - All rights reserved
-            </BlurFade> 
+              © 2024 Casalago - All rights reserved
+            </BlurFade>
             <div className="flex space-x-6">
               {footerNavigation.social.map((item, index) => (
                 <BlurFade inView delay={0.9 + 0.2 * index} key={item.name}>
                   <Link key={item.name} isExternal className="text-[#ffffff]" href={item.href}>
                     <span className="sr-only">{item.name}</span>
-                  <item.icon aria-hidden="true" className="w-6" />
+                    <item.icon aria-hidden="true" className="w-6" />
                   </Link>
                 </BlurFade>
               ))}
