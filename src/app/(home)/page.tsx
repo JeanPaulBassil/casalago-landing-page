@@ -64,7 +64,7 @@ const places = [
     imageSrc: 'products/paoplaLengti.jpg',
     description:
       'Paola Lenti is known for its vibrant, innovative outdoor and indoor furniture, blending unique materials with contemporary design.',
-    href: 'https://www.paolalenti.it',
+    href: 'https://www.usm.com',
   },
   {
     id: 8,
@@ -72,7 +72,7 @@ const places = [
     imageSrc: 'products/USMModularFurniture.jpg',
     description:
       'USM Modular Furniture creates versatile, modular furniture systems that adapt to various spaces and uses, offering sustainability and style.',
-    href: 'https://www.usm.com',
+    href: 'https://www.paolalenti.it',
   },
 ]
 
