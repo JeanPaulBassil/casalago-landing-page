@@ -4,8 +4,9 @@ import './globals.css'
 import { NextUIProvider } from '@nextui-org/system'
 import { Toaster } from 'react-hot-toast'
 import ReactQueryClientProvider from '@/providers/ReactQueryProvider'
-import Header from './_components/header'
+import Header from './_components/Header'
 import Footer from './_components/footer'
+
 
 const inter = Inter({ subsets: ['latin'] })
 
