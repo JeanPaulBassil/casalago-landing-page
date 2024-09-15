@@ -1,243 +1,136 @@
-'use client'
-import React from 'react'
-import { Button, Image } from '@nextui-org/react'
-import { Icon } from '@iconify/react'
-import { AnimatePresence, LazyMotion, domAnimation, m } from 'framer-motion'
+import Image from "next/image";
+import Link from "next/link";
+import PlaceListItem from "../_components/PlaceListItem";
 
-import AppScreenshotSkewed from '../_components/AppScreenShotSkewed'
-import BlurFade from '../_components/magic-ui/BlurFade'
-import { cn } from '@/lib/utils'
-import PlaceListItem from '../_components/PlaceListItem'
-
-const places = [
-  {
-    id: 1,
-    name: 'Baxter',
-    imageSrc: 'products/baxter.jpg',
-    description:
-      'Baxter creates unique, luxurious furniture with a contemporary and innovative design, blending craftsmanship with modern aesthetics.',
-    href: 'https://www.baxter.it',
-  },
-  {
-    id: 2,
-    name: 'Cassina',
-    imageSrc: 'products/cassina.jpg',
-    description:
-      'Cassina is renowned for its innovative, high-quality furniture that reflects a rich Italian heritage and modern design philosophy.',
-    href: 'https://www.cassina.com',
-  },
-  {
-    id: 3,
-    name: 'CC-Tapis',
-    imageSrc: 'products/cc-tapis.jpg',
-    description:
-      'CC-Tapis offers hand-knotted contemporary rugs crafted with sustainable materials and artisanal techniques in Nepal.',
-    href: 'https://www.cc-tapis.com',
-  },
-  {
-    id: 4,
-    name: 'Edra',
-    imageSrc: 'products/Edra.jpeg',
-    description:
-      'Edra combines traditional craftsmanship with cutting-edge technology to create unique, high-end furniture pieces.',
-    href: 'https://www.edra.com',
-  },
-  {
-    id: 5,
-    name: 'Flexform',
-    imageSrc: 'products/flexform.jpg',
-    description:
-      'Flexform specializes in elegantly designed, timeless furniture collections that prioritize comfort and quality materials.',
-    href: 'https://www.flexform.it',
-  },
-  {
-    id: 6,
-    name: 'Henge',
-    imageSrc: 'products/henge.jpg',
-    description:
-      'Henge produces bespoke furniture and lighting solutions that embody contemporary style with artisanal craftsmanship.',
-    href: 'https://www.hengesrl.com',
-  },
-  {
-    id: 7,
-    name: 'Paola Lenti',
-    imageSrc: 'products/paoplaLengti.jpg',
-    description:
-      'Paola Lenti is known for its vibrant, innovative outdoor and indoor furniture, blending unique materials with contemporary design.',
-    href: 'https://www.usm.com',
-  },
-  {
-    id: 8,
-    name: 'USM Modular Furniture',
-    imageSrc: 'products/USMModularFurniture.jpg',
-    description:
-      'USM Modular Furniture creates versatile, modular furniture systems that adapt to various spaces and uses, offering sustainability and style.',
-    href: 'https://www.paolalenti.it',
-  },
-]
-
-export default function Component() {
+export default function Home() {
+  const products = [
+    {
+      path: "/images/home/products/cc-tapis.jpg",
+      title: "Baxter",
+      url: "https://www.cc-tapis.com/",
+    },
+    {
+      path: "/images/home/products/Edra.jpeg",
+      title: "Cassina",
+      url: "https://www.edra.com/en/home",
+    },
+    {
+      path: "/images/home/products/flexform.jpg",
+      title: "CC-Tapis",
+      url: "https://www.flexform.it/en",
+    },
+    {
+      path: "/images/home/products/cassina.jpg",
+      title: "Edra",
+      url: "https://www.cassina.com/ww/en.html",
+    },
+    {
+      path: "/images/home/products/baxter.jpg",
+      title: "Flexform",
+      url: "https://www.baxter.it/en/",
+    },
+    {
+      path: "/images/home/products/henge.jpg",
+      title: "Henge",
+      url: "https://www.henge07.com/",
+    },
+    {
+      path: "/images/home/products/USMModularFurniture.jpg",
+      title: "Paola Lenti",
+      url: "https://us.usm.com/",
+    },
+    {
+      path: "/images/home/products/paoplaLengti.jpg",
+      title: "USM Modular Furniture",
+      url: "https://www.paolalenti.it/en/",
+    },
+  ];
+  // inspirations are 6 images of the products above
+  const inspirations = [
+    "/images/home/products/baxter.png",
+    "/images/home/products/cassina.png",
+    "/images/home/products/flexform.png",
+    "/images/home/products/tapis.png",
+    "/images/home/products/edra.png",
+  ];
   return (
-    <>
-      <main className="container mx-auto mt-[80px] flex max-w-[1024px] flex-col items-start px-8">
-        <section className="z-20 flex flex-col items-start justify-center gap-[18px] sm:gap-6">
-          <LazyMotion features={domAnimation}>
-            <m.div
-              animate="kick"
-              className="flex flex-col gap-6"
-              exit="auto"
-              initial="auto"
-              transition={{
-                duration: 0.25,
-                ease: 'easeInOut',
-              }}
-              variants={{
-                auto: { width: 'auto' },
-                kick: { width: 'auto' },
-              }}
-            >
-              <AnimatePresence mode="wait">
-                <m.div
-                  animate={{ filter: 'blur(0px)', opacity: 1, x: 0 }}
-                  className="text-start text-[clamp(40px,10vw,44px)] font-bold leading-[1.2] tracking-tighter sm:text-[64px]"
-                  initial={{ filter: 'blur(16px)', opacity: 0, x: 15 + 1 * 2 }}
-                  transition={{
-                    bounce: 0,
-                    delay: 0.01 * 10,
-                    duration: 0.8 + 0.1 * 8,
-                    type: 'spring',
-                  }}
-                >
-                  <div className="bg-hero-section-title text-transparent bg-clip-text dark:from-[#FFFFFF] dark:to-[#FFFFFF66]">
-                    Discover Our Exclusive <br /> Collection of Luxury Furniture
-                  </div>
-                </m.div>
-
-                <m.div
-                  animate={{ filter: 'blur(0px)', opacity: 1, x: 0 }}
-                  className="text-start font-normal leading-7 text-default-500 sm:w-[466px] sm:text-[18px]"
-                  initial={{ filter: 'blur(16px)', opacity: 0, x: 15 + 1 * 3 }}
-                  transition={{
-                    bounce: 0,
-                    delay: 0.01 * 30,
-                    duration: 0.8 + 0.1 * 9,
-                    type: 'spring',
-                  }}
-                >
-                  Casalago is a furniture company that specializes in creating high-quality, stylish
-                  furniture for the home and office. We are committed to providing our customers
-                  with the best possible experience.
-                </m.div>
-
-                <m.div
-                  animate={{ filter: 'blur(0px)', opacity: 1, x: 0 }}
-                  className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-6"
-                  initial={{ filter: 'blur(16px)', opacity: 0, x: 15 + 1 * 4 }}
-                  transition={{
-                    bounce: 0,
-                    delay: 0.01 * 50,
-                    duration: 0.8 + 0.1 * 10,
-                    type: 'spring',
-                  }}
-                >
-                  <Button
-                    className="h-10 w-[163px] bg-default-foreground px-[16px] py-[10px] text-small font-medium leading-5 text-background"
-                    radius="full"
-                  >
-                    Get To Know Us
-                  </Button>
-                  <Button
-                    className="h-10 w-[163px] border-1 border-default-100 px-[16px] py-[10px] text-small font-medium leading-5"
-                    endContent={
-                      <span className="pointer-events-none flex h-[22px] w-[22px] items-center justify-center rounded-full bg-default-100">
-                        <Icon
-                          className="text-default-500 [&>path]:stroke-[1.5]"
-                          icon="solar:arrow-right-linear"
-                          width={16}
-                        />
-                      </span>
-                    }
-                    radius="full"
-                    variant="bordered"
-                  >
-                    View Our Products
-                  </Button>
-                </m.div>
-              </AnimatePresence>
-            </m.div>
-          </LazyMotion>
-        </section>
-      </main>
-
-      <div className="mt-4 flex w-full flex-col justify-between gap-4 bg-[#ABC485] p-4 md:mt-72 md:flex-row md:gap-0 xl:p-24">
-        <LazyMotion features={domAnimation}>
-          <AnimatePresence mode="wait">
-            <m.div
-              animate={{ filter: 'blur(0px)', opacity: 1, y: 0 }}
-              className="absolute top-[10.1%] w-full"
-              initial={{ filter: 'blur(16px)', opacity: 0, y: 300 }}
-              transition={{
-                bounce: 0,
-                delay: 0.01 * 10,
-                duration: 0.8 + 0.1 * 8,
-                type: 'spring',
-              }}
-            >
-              <AppScreenshotSkewed className="hidden w-full md:block" />
-            </m.div>
-          </AnimatePresence>
-        </LazyMotion>
-        <BlurFade inView delay={0.5} className="w-full md:w-1/2">
-          <h1 className="z-50 px-4 text-center text-3xl font-bold text-[#ffffff] lg:px-24 md:text-start">
-            Your very own personal living space.
-          </h1>
-        </BlurFade>
-        <BlurFade inView delay={0.7} className="w-full md:w-1/2">
-          <p className="z-50 px-4 text-center text-[#ffffff] lg:px-24 md:text-start">
-            Casalago believes that a home is not just a place, but a reflection of who you are.
-            Understanding that each home is an individual expression of the people who live in it.
-            With our carefuly curated design furniture and accessories, we invite you to experience
-            a new level of living beter at home.
-          </p>
-        </BlurFade>
+    <div className="">
+      <Image
+        src="/images/home/banner.png"
+        alt="banner"
+        width={1920}
+        height={1080}
+        className="w-full"
+      />
+      {/* Below the banner */}
+      <div className="w-full flex py-12 lg:py-24 items-center max-lg:flex-col max-lg:gap-4">
+        <h1 className="lg:self-start lg:w-1/2 text-4xl max-lg:text-xl max-sm:text-lg font-bold max-lg:text-center">
+          Your Very Own <br /> Personal Living Space.
+        </h1>
+        <p className="font-medium lg:w-1/2 text-xl max-lg:text-lg max-sm:text-base max-lg:text-center">
+          Casalago believes that a home is not just a place, but a reflection of
+          who you are. Understanding that each home is an individual expression
+          of the people who live in it. <br />
+          <br />
+          With our carefuly curated design furniture and accessories, we invite
+          you to experience a new level of living beter at home.
+        </p>
       </div>
-      <div className="mt-10 flex w-full flex-col justify-between gap-4 p-4 md:flex-row md:gap-0">
-        <BlurFade inView delay={0.5} className="w-full md:w-1/2">
-          <Image
-            src="liveBetter.webp"
-            radius="sm"
-            alt="image-1"
-            width={700}
-            height={700}
-            className="h-[400px] w-[600px] object-cover"
-          />
-        </BlurFade>
-        <div className="flex w-full flex-col justify-center gap-4 md:w-1/2">
-          <BlurFade inView delay={0.5}>
-            <h1 className="text-3xl font-bold">Live better, feel better.</h1>
-          </BlurFade>
-          <BlurFade inView delay={0.7}>
-            <p>
-              Casalago believes that a home is not just a place, but a reflection of who you are.
-              Understanding that each home is an individual expression of the people who live in it.
-              With our carefuly curated design furniture and accessories, we invite you to
-              experience a new level of living beter at home.
-            </p>
-          </BlurFade>
+      {/* Live Better Feel Better */}
+      <div className="flex items-center max-lg:flex-col">
+        <Image
+          src="/images/home/liveBetter.png"
+          alt="Live Better Feel Better"
+          width={1920}
+          height={1080}
+          className="w-[48%] max-lg:w-full"
+        />
+        <div className="flex flex-col w-1/2 max-lg:w-full px-8 gap-4 py-12">
+          <h2 className="text-4xl max-lg:text-xl max-sm:text-lg font-bold max-lg:text-center">
+            Live Better Feel Better
+          </h2>
+          <p className="font-medium text-xl max-lg:text-lg max-sm:text-base max-lg:text-center">
+            We shape your environment to perfectly suit your lifestyle,
+            character and individuality. <br />
+            <br /> Creating beautiful living spaces that celebrate lifeí s
+            precious moments, to be shared with loved ones or to be enjoyed in
+            peace and quiet.
+          </p>
         </div>
       </div>
-      <div className="mt-10 flex w-full flex-col gap-4 p-4 md:flex-row md:gap-0">
-        <BlurFade inView delay={0.5}>
-          <h1 className="text-center text-3xl font-bold">Our Brands</h1>
-          <div className="my-auto mt-7 grid grid-cols-1 gap-5 md::grid-cols-2 lg:grid-cols-3">
-            {places.map((place, index) => (
-              <BlurFade inView delay={0.5 + 0.2 * index}>
-                <PlaceListItem key={place.id} {...place} id={place.id.toString()} />
-              </BlurFade>
-            ))}
-          </div>
-        </BlurFade>
+      {/* Our Products */}
+      <div className="lg:py-24">
+        <h1 className="text-4xl max-lg:text-xl max-sm:text-lg font-bold text-center">
+          Our Products
+        </h1>
+        <div className="w-full my-10 grid auto-cols-max md:grid-cols-2 lg:grid-cols-3 grid-flow-row grid-cols-[repeat(auto-fill,minmax(175px,1fr))] max-sm:pb-6 gap-5">
+          {products.map((product, index) => (
+            <PlaceListItem id={index.toString()} key={index} {...product} imageSrc={product.path} name={product.title} href={product.url} />
+          ))}
+        </div>
       </div>
-    </>
-  )
+      {/* Get Inspired COMMENTED OUT*/}
+      {/* <div>
+                <h1 className="text-4xl max-lg:text-xl max-sm:text-lg font-bold text-center">
+                    Get Inspired!
+                </h1>
+                <div className="py-12 grid auto-cols-max grid-flow-row grid-cols-[repeat(auto-fill,minmax(300px,1fr))] max-2xl:grid-cols-[repeat(auto-fill,minmax(330px,1fr))] max-sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] max-sm:pb-6 gap-x-12 gap-y-8">
+                    {inspirations.map((inspiration, index) => (
+                        <div
+                            key={index}
+                            className="h-[300px] w-[300px] justify-self-center"
+                        >
+                            <Image
+                                src={inspiration}
+                                alt={`Inspiration ${index + 1}`}
+                                width={300}
+                                height={300}
+                                className="w-[300px] h-[300px] object-cover"
+                            />
+                        </div>
+                    ))}
+                </div>
+            </div> */}
+    </div>
+  );
 }
