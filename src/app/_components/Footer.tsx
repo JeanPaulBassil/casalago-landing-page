@@ -24,7 +24,7 @@ const Footer = (props: Props) => {
 
   return (
     <div className="bg-[#ABC485] 2xl:px-24 xl:px-20 lg:px-16 md:px-10 sm:px-5 px-2 text-white pt-8 py-4 flex flex-col gap-4">
-      <div className="flex flex-row justify-between max-md:flex-col gap-12">
+      <div className="flex flex-row justify-between max-lg:flex-col gap-12">
         {/* Emails */}
         <div className="flex flex-col">
           <h1 className="font-semibold text-lg mb-2">
