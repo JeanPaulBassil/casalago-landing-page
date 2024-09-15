@@ -5,7 +5,7 @@ import { NextUIProvider } from '@nextui-org/system'
 import { Toaster } from 'react-hot-toast'
 import ReactQueryClientProvider from '@/providers/ReactQueryProvider'
 import Header from './_components/Header'
-import Footer from './_components/footer'
+import Footer from './_components/Footer'
 
 
 const inter = Inter({ subsets: ['latin'] })
