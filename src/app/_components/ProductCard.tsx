@@ -37,7 +37,7 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
         <Image
           isZoomed
           alt={name}
-          className="aspect-rectangle h-[300px] w-full hover:scale-110 shadow-none"
+          className="aspect-rectangle max-h-[300px] md:h-[300px] w-full hover:scale-110 shadow-none"
           isLoading={isLoading}
           src={imageSrc}
           radius="none"

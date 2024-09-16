@@ -1,7 +1,7 @@
 'use client'
 import { Input } from '@nextui-org/input'
 import React from 'react'
-import PlaceListItem from '../_components/PlaceListItem'
+import PlaceListItem from '../_components/ProductCard'
 import { ProductApi } from '@/api/product.api'
 import { Product } from '@/api/model/Product'
 import { ServerError } from '@/api/utils'
