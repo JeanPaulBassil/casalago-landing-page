@@ -7,42 +7,42 @@ export default function Home() {
     {
       path: '/images/home/products/cc-tapis.jpg',
       title: 'Baxter',
-      url: 'https://www.cc-tapis.com/',
+      url: 'https://www.baxter.it/en/',
     },
     {
       path: '/images/home/products/Edra.jpeg',
       title: 'Cassina',
-      url: 'https://www.edra.com/en/home',
+      url: 'https://www.cassina.com/ww/en.html',
     },
     {
       path: '/images/home/products/flexform.jpg',
       title: 'cc-tapis',
-      url: 'https://www.flexform.it/en',
+      url: 'https://www.cc-tapis.com/',
     },
     {
       path: '/images/home/products/cassina.jpg',
       title: 'Edra',
-      url: 'https://www.cassina.com/ww/en.html',
+      url: 'https://www.edra.com/en/home',
     },
     {
       path: '/images/home/products/baxter.jpg',
       title: 'Flexform',
-      url: 'https://www.baxter.it/en/',
+      url: 'https://www.flexform.it/en',
     },
     {
       path: '/images/home/products/henge.jpg',
       title: 'Henge',
-      url: 'https://www.henge07.com/',
+      url: 'https://www.henge07.com/en',
     },
     {
       path: '/images/home/products/USMModularFurniture.jpg',
       title: 'Paola Lenti',
-      url: 'https://us.usm.com/',
+      url: 'https://www.paolalenti.it/en/home',
     },
     {
       path: '/images/home/products/paoplaLengti.jpg',
       title: 'USM Modular Furniture',
-      url: 'https://www.paolalenti.it/en/',
+      url: 'https://www.usm.com/en',
     },
   ]
   // inspirations are 6 images of the products above
