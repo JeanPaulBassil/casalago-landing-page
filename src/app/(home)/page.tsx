@@ -101,7 +101,7 @@ export default function Home() {
       {/* Our Products */}
       <div className="lg:py-24">
         <h1 className="text-4xl max-lg:text-xl max-sm:text-lg font-bold text-center">
-          Our Products
+          Our brands
         </h1>
         <div className="w-full my-10 grid auto-cols-max md:grid-cols-2 lg:grid-cols-3 grid-flow-row grid-cols-[repeat(auto-fill,minmax(175px,1fr))] max-sm:pb-6 gap-5">
           {products.map((product, index) => (
@@ -109,28 +109,6 @@ export default function Home() {
           ))}
         </div>
       </div>
-      {/* Get Inspired COMMENTED OUT*/}
-      {/* <div>
-                <h1 className="text-4xl max-lg:text-xl max-sm:text-lg font-bold text-center">
-                    Get Inspired!
-                </h1>
-                <div className="py-12 grid auto-cols-max grid-flow-row grid-cols-[repeat(auto-fill,minmax(300px,1fr))] max-2xl:grid-cols-[repeat(auto-fill,minmax(330px,1fr))] max-sm:grid-cols-[repeat(auto-fill,minmax(280px,1fr))] max-sm:pb-6 gap-x-12 gap-y-8">
-                    {inspirations.map((inspiration, index) => (
-                        <div
-                            key={index}
-                            className="h-[300px] w-[300px] justify-self-center"
-                        >
-                            <Image
-                                src={inspiration}
-                                alt={`Inspiration ${index + 1}`}
-                                width={300}
-                                height={300}
-                                className="w-[300px] h-[300px] object-cover"
-                            />
-                        </div>
-                    ))}
-                </div>
-            </div> */}
     </div>
   );
 }
