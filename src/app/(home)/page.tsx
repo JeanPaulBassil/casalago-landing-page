@@ -16,7 +16,7 @@ export default function Home() {
     },
     {
       path: '/images/home/products/flexform.jpg',
-      title: 'CC-Tapis',
+      title: 'cc-tapis',
       url: 'https://www.flexform.it/en',
     },
     {
