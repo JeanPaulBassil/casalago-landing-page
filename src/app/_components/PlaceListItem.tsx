@@ -33,34 +33,23 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
     const [isLiked, setIsLiked] = React.useState(false)
 
     return (
-      <div
-        ref={ref}
-        className={cn(
-          'relative flex w-full flex-none flex-col gap-3',
-          {
-            'rounded-none bg-background shadow-none': removeWrapper,
-          },
-          className
-        )}
-        {...props}
-      >
+      <div ref={ref} className="relative flex w-full flex-none flex-col gap-3">
         <Image
-          isBlurred
           isZoomed
           alt={name}
-          className="aspect-square w-full hover:scale-110"
+          className="aspect-square w-full hover:scale-110 shadow-none"
           isLoading={isLoading}
           src={imageSrc}
-          radius="sm"
+          radius="none"
           width="100%"
           height="auto"
         />
 
-        <div className="mt-1 flex flex-col gap-2 px-1">
-          <div className="flex items-center justify-between gap-1 border-b border-gray-200 py-2 border-t">
+        <div className="mt-1 flex flex-col gap-2">
+          <div className="border-gray-200 flex items-center justify-between gap-1 border-b border-t py-2">
             <h3 className="text-small font-medium text-default-700">{name}</h3>
             <Link href={href}>
-              <Button isIconOnly startContent={<ArrowRight />} variant='light' size='sm'></Button>
+              <Button isIconOnly startContent={<ArrowRight />} variant="light" size="sm"></Button>
             </Link>
           </div>
         </div>
