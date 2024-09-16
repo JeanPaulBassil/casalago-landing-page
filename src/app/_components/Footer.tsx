@@ -41,9 +41,9 @@ const Footer = (props: Props) => {
               placeholder="Email"
               startContent={<Mail />}
               color='success'
-              size='sm'
+              size='md'
               classNames={{
-                input: "bg-[#ABC485]",
+                input: "bg-[#ABC485] placeholder:text-[#ffffff]",
               }}
               variant="underlined"
               endContent={
