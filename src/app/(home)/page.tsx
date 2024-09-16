@@ -102,6 +102,7 @@ export default function Home() {
         <h1 className="text-center text-4xl font-bold max-lg:text-xl max-sm:text-lg">Our brands</h1>
         <div className="my-10 grid w-full md:grid-cols-1 lg:grid-cols-2 grid-flow-row grid-cols-[repeat(auto-fill,minmax(175px,1fr))] gap-5 max-sm:pb-6 2xl:grid-cols-3 3xl:grid-cols-4">
           {products.map((product, index) => (
+            <Link href={product.url} key={index} className='cursor-pointer'>
             <PlaceListItem
               id={index.toString()}
               key={index}
@@ -109,7 +110,8 @@ export default function Home() {
               imageSrc={product.path}
               name={product.title}
               href={product.url}
-            />
+              />
+            </Link>
           ))}
         </div>
       </div>
