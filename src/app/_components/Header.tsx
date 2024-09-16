@@ -14,7 +14,7 @@ const Header = (props: Props) => {
                 className="w-[40px] h-[40px] max-lg:w-[30px] max-lg:h-[30px] max-sm:w-[20px] max-sm:h-[20px] max-sm:-translate-y-[2px]"
             />
             <h1 className="text-4xl max-lg:text-xl max:-sm:text-lg font-bold translate-y-1">
-                Casalago
+                casalago
             </h1>
         </div>
     );
