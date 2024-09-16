@@ -71,6 +71,7 @@ const Footer = (props: Props) => {
           <div className="flex items-center gap-2">
             {socials.map((social, index) => (
               <Link
+                target="_blank"
                 href={social.link}
                 className="border-white flex h-12 w-12 items-center justify-center rounded-full border p-1"
                 key={index}
