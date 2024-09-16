@@ -9,10 +9,14 @@ type Props = {}
 
 const Footer = (props: Props) => {
   const socials = [
-    '/icons/facebook.png',
-    '/icons/instagram.png',
-    '/icons/linkedin.png',
-    '/icons/youtube.svg',
+    {
+      icon: '/icons/instagram.png',
+      link: 'https://www.instagram.com/casalago.ng'
+    },
+    {
+      icon: '/icons/youtube.svg',
+      link: 'https://www.instagram.com/casalago.ng'
+    }
   ]
 
   const sendEmail = async () => {
@@ -67,11 +71,11 @@ const Footer = (props: Props) => {
           <div className="flex items-center gap-2">
             {socials.map((social, index) => (
               <Link
-                href="/"
+                href={social.link}
                 className="border-white flex h-12 w-12 items-center justify-center rounded-full border p-1"
                 key={index}
               >
-                <Image src={social} height={20} width={20} alt="Social" className="h-6 w-6" />
+                <Image src={social.icon} height={20} width={20} alt="Social" className="h-6 w-6" />
               </Link>
             ))}
           </div>
