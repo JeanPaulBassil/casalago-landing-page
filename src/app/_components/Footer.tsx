@@ -1,61 +1,61 @@
-import React from "react";
-import Image from "next/image";
-import Link from "next/link";
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { Input } from '@nextui-org/input'
+import { ArrowRight, Mail } from 'lucide-react'
+import { Button } from '@nextui-org/button'
 
-type Props = {};
+type Props = {}
 
 const Footer = (props: Props) => {
   const socials = [
-    "/icons/facebook.png",
-    "/icons/instagram.png",
-    "/icons/linkedin.png",
-    "/icons/youtube.svg",
-  ];
+    '/icons/facebook.png',
+    '/icons/instagram.png',
+    '/icons/linkedin.png',
+    '/icons/youtube.svg',
+  ]
 
   const sendEmail = async () => {
-    "use server";
+    'use server'
     // await sendMail({
     //   to: "jean.paul.bassil@outlook.com",
     //   name: "Jean Paul Bassil",
     //   subject: "Hello",
     //   body: "This is a test email",
     // });
-  };
+  }
 
   return (
-    <div className="bg-[#ABC485] 2xl:px-24 xl:px-20 lg:px-16 md:px-10 sm:px-5 px-2 text-white pt-8 py-4 flex flex-col gap-4">
-      <div className="flex flex-row justify-between max-lg:flex-col gap-12">
+    <div className="text-white flex flex-col gap-4 bg-[#ABC485] px-2 py-4 pt-8 text-[#ffffff] sm:px-5 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
+      <div className="flex flex-row justify-between gap-12 max-lg:flex-col">
         {/* Emails */}
         <div className="flex flex-col">
-          <h1 className="font-semibold text-lg mb-2">
-            Sign up for exclusive news!
-          </h1>
-          <form
-            action=""
-            className="relative max-sm:w-3/4 min-w-[200px] max-w-[400px]"
-          >
-            <input
-              placeholder="Your Email"
+          <h1 className="mb-2 text-lg font-semibold">Sign up for exclusive news!</h1>
+          <form action="" className="relative min-w-[200px] max-w-[400px] max-sm:w-3/4">
+            <Input
               type="email"
-              className="w-full placeholder-zinc-50 border bg-[#ABC485] border-b-white border-t-[#ABC485] border-l-[#ABC485] border-r-[#ABC485] outline-none focus:outline-none"
+              placeholder="Email"
+              startContent={<Mail />}
+              color='success'
+              size='sm'
+              classNames={{
+                input: "bg-[#ABC485]",
+              }}
+              variant="underlined"
+              endContent={
+                <Button
+                  isIconOnly
+                  startContent={<ArrowRight color='white'/>}
+                  variant="light"
+                  size="sm"
+                />
+              }
             />
-            <button
-              className="flex gap-2 items-center justify-between absolute right-0 top-0"
-              formAction={sendEmail}
-            >
-              <p>Subscribe</p>
-              <Image
-                src="/icons/right-arrow.png"
-                alt="Subscribe"
-                width={20}
-                height={20}
-              />
-            </button>
           </form>
         </div>
         {/* Our Store */}
         <div>
-          <h1 className="font-semibold text-lg mb-2">Our Store</h1>
+          <h1 className="mb-2 text-lg font-semibold">Our Store</h1>
           <p>
             40 Adetokunbo Ademola Street <br /> Victoria Island, Lagos <br />
             T 234-814-159 6534 <br /> info@casalago.com
@@ -63,33 +63,25 @@ const Footer = (props: Props) => {
         </div>
         {/* Socials */}
         <div>
-          <h1 className="font-semibold text-lg mb-2">
-            Stay Up To Date With The Latest Trends
-          </h1>
+          <h1 className="mb-2 text-lg font-semibold">Stay Up To Date With The Latest Trends</h1>
           <div className="flex items-center gap-2">
             {socials.map((social, index) => (
               <Link
                 href="/"
-                className="border border-white rounded-full p-1 w-12 h-12 flex items-center justify-center"
+                className="border-white flex h-12 w-12 items-center justify-center rounded-full border p-1"
                 key={index}
               >
-                <Image
-                  src={social}
-                  height={20}
-                  width={20}
-                  alt="Social"
-                  className="w-6 h-6"
-                />
+                <Image src={social} height={20} width={20} alt="Social" className="h-6 w-6" />
               </Link>
             ))}
           </div>
         </div>
       </div>
-      <div className="w-full border  border-x-[#ABC485] border-b-[#ABC485] border-t-white py-2">
+      <div className="border-t-white w-full border border-x-[#ABC485] border-b-[#ABC485] py-2">
         <p>© 2024 Casalago - All rights reserved.</p>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer
