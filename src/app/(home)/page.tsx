@@ -63,11 +63,11 @@ export default function Home() {
         className="w-full"
       />
       {/* Below the banner */}
-      <div className="flex w-full items-center py-12 max-lg:flex-col max-lg:gap-4 lg:py-24">
-        <h1 className="text-4xl font-bold max-lg:text-center max-lg:text-xl max-sm:text-lg lg:w-1/2 lg:self-start">
+      <div className="flex w-full items-center py-12 max-xl:flex-col max-xl:gap-4 xl:py-24">
+        <h1 className="text-4xl font-bold max-xl:text-center max-xl:text-xl max-sm:text-lg xl:w-1/2 xl:self-start">
           Your Very Own <br /> Personal Living Space.
         </h1>
-        <p className="text-xl font-medium max-lg:text-center max-lg:text-lg max-sm:text-base lg:w-1/2">
+        <p className="text-xl font-medium max-xl:text-center max-xl:text-lg max-sm:text-base xl:w-1/2">
           Casalago believes that a home is not just a place, but a reflection of who you are.
           Understanding that each home is an individual expression of the people who live in it.{' '}
           <br />
@@ -77,19 +77,19 @@ export default function Home() {
         </p>
       </div>
       {/* Live Better Feel Better */}
-      <div className="flex items-center max-lg:flex-col">
+      <div className="flex items-center max-xl:flex-col">
         <Image
           src="/images/home/liveBetter.png"
           alt="Live Better Feel Better"
           width={1920}
           height={1080}
-          className="w-[48%] max-lg:w-full"
+          className="w-[48%] max-xl:w-full"
         />
-        <div className="flex w-1/2 flex-col gap-4 px-8 py-12 max-lg:w-full">
-          <h2 className="text-4xl font-bold max-lg:text-center max-lg:text-xl max-sm:text-lg">
+        <div className="flex w-1/2 flex-col gap-4 px-8 py-12 max-xl:w-full">
+          <h2 className="text-4xl font-bold max-xl:text-center max-xl:text-xl max-sm:text-lg">
             Live Better Feel Better
           </h2>
-          <p className="text-xl font-medium max-lg:text-center max-lg:text-lg max-sm:text-base">
+          <p className="text-xl font-medium max-xl:text-center max-xl:text-lg max-sm:text-base">
             We shape your environment to perfectly suit your lifestyle, character and individuality.{' '}
             <br />
             <br /> Creating beautiful living spaces that celebrate lifeí s precious moments, to be
@@ -100,16 +100,16 @@ export default function Home() {
       {/* Our Products */}
       <div className="lg:py-24">
         <h1 className="text-center text-4xl font-bold max-lg:text-xl max-sm:text-lg">Our brands</h1>
-        <div className="my-10 grid w-full md:grid-cols-1 lg:grid-cols-2 grid-flow-row grid-cols-[repeat(auto-fill,minmax(175px,1fr))] gap-5 max-sm:pb-6 2xl:grid-cols-3 3xl:grid-cols-4">
+        <div className="my-10 grid w-full grid-flow-row grid-cols-[repeat(auto-fill,minmax(175px,1fr))] gap-5 max-sm:pb-6 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4">
           {products.map((product, index) => (
-            <Link href={product.url} key={index} className='cursor-pointer'>
-            <PlaceListItem
-              id={index.toString()}
-              key={index}
-              {...product}
-              imageSrc={product.path}
-              name={product.title}
-              href={product.url}
+            <Link href={product.url} key={index} className="cursor-pointer">
+              <PlaceListItem
+                id={index.toString()}
+                key={index}
+                {...product}
+                imageSrc={product.path}
+                name={product.title}
+                href={product.url}
               />
             </Link>
           ))}
