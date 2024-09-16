@@ -11,12 +11,16 @@ const Footer = (props: Props) => {
   const socials = [
     {
       icon: '/icons/instagram.png',
-      link: 'https://www.instagram.com/casalago.ng'
+      link: 'https://www.instagram.com/casalago.ng',
     },
     {
       icon: '/icons/youtube.svg',
-      link: 'https://www.instagram.com/casalago.ng'
-    }
+      link: 'https://www.instagram.com/casalago.ng',
+    },
+    {
+      icon: '/icons/whatsapp.png',
+      link: 'https://wa.me/2348141596534',
+    },
   ]
 
   const sendEmail = async () => {
@@ -40,16 +44,16 @@ const Footer = (props: Props) => {
               type="email"
               placeholder="Email"
               startContent={<Mail />}
-              color='success'
-              size='md'
+              color="success"
+              size="md"
               classNames={{
-                input: "bg-[#ABC485] placeholder:text-[#ffffff]",
+                input: 'bg-[#ABC485] placeholder:text-[#ffffff]',
               }}
               variant="underlined"
               endContent={
                 <Button
                   isIconOnly
-                  startContent={<ArrowRight color='white'/>}
+                  startContent={<ArrowRight color="white" />}
                   variant="light"
                   size="sm"
                 />
