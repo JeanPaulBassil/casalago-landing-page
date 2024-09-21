@@ -1,6 +1,12 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
 import PlaceListItem from '../_components/ProductCard'
+import { BrandApi } from '@/api/brand.api'
+import { useQuery } from '@tanstack/react-query'
+import { Brand } from '@/api/models/Brand'
+import { ServerError } from '@/api/utils'
+import { Spinner } from '@nextui-org/react'
 
 export default function Home() {
   const products = [
@@ -53,6 +59,26 @@ export default function Home() {
     '/images/home/products/tapis.png',
     '/images/home/products/edra.png',
   ]
+
+  const brandApi = new BrandApi()
+
+  const {
+    data: brands,
+    isLoading,
+    isError,
+    error,
+  } = useQuery<Brand[], ServerError>({
+    queryKey: ['brands'],
+    queryFn: async () => {
+      const response = await brandApi.getBrands({
+        queries: {
+          name: '',
+        },
+      })
+      return response.payload
+    },
+  })
+
   return (
     <div className="">
       <Image
@@ -101,18 +127,26 @@ export default function Home() {
       <div className="lg:py-24">
         <h1 className="text-center text-4xl font-bold max-lg:text-xl max-sm:text-lg">Our brands</h1>
         <div className="my-10 grid w-full grid-flow-row grid-cols-[repeat(auto-fill,minmax(175px,1fr))] gap-5 max-sm:pb-6 md:grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 3xl:grid-cols-4">
-          {products.map((product, index) => (
-            <Link href={product.url} key={index} className="cursor-pointer">
-              <PlaceListItem
-                id={index.toString()}
+          {isLoading ? (
+            <div className='h-full w-full flex items-center justify-center'>
+              <Spinner />
+            </div>
+          ) : isError ? (
+            <div>Error: {error.message}</div>
+          ) : (
+            brands &&
+            brands.map((brand, index) => (
+              <Link href={'/'} key={index} className="cursor-pointer">
+                <PlaceListItem
                 key={index}
-                {...product}
-                imageSrc={product.path}
-                name={product.title}
-                href={product.url}
+                {...brand}
+                imageSrc={brand.image ?? ''}
+                name={brand.name ?? ''}
+                href={'/'}
               />
-            </Link>
-          ))}
+              </Link>
+            ))
+          )}
         </div>
       </div>
     </div>
