@@ -3,7 +3,6 @@ import { Input } from '@nextui-org/input'
 import React from 'react'
 import PlaceListItem from '../_components/ProductCard'
 import { ProductApi } from '@/api/product.api'
-import { Product } from '@/api/model/Product'
 import { ServerError } from '@/api/utils'
 import { useQuery } from '@tanstack/react-query'
 import useOrderedQueries from '../hooks/useQueries'
@@ -11,6 +10,7 @@ import { Spinner } from '@nextui-org/react'
 import { Search } from 'lucide-react'
 import BlurFade from '../_components/magic-ui/BlurFade'
 import useDebouncedCallback from '../hooks/useDebounceCallback'
+import { Product } from '@/api/models/Product'
 
 type Props = {}
 
