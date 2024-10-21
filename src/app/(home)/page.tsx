@@ -9,57 +9,6 @@ import { ServerError } from '@/api/utils'
 import { Spinner } from '@nextui-org/react'
 
 export default function Home() {
-  const products = [
-    {
-      path: '/images/home/products/cc-tapis.jpg',
-      title: 'Baxter',
-      url: 'https://www.baxter.it/en/',
-    },
-    {
-      path: '/images/home/products/Edra.jpeg',
-      title: 'Cassina',
-      url: 'https://www.cassina.com/ww/en.html',
-    },
-    {
-      path: '/images/home/products/flexform.jpg',
-      title: 'cc-tapis',
-      url: 'https://www.cc-tapis.com/',
-    },
-    {
-      path: '/images/home/products/cassina.jpg',
-      title: 'Edra',
-      url: 'https://www.edra.com/en/home',
-    },
-    {
-      path: '/images/home/products/baxter.jpg',
-      title: 'Flexform',
-      url: 'https://www.flexform.it/en',
-    },
-    {
-      path: '/images/home/products/henge.jpg',
-      title: 'Henge',
-      url: 'https://www.henge07.com/en',
-    },
-    {
-      path: '/images/home/products/USMModularFurniture.jpg',
-      title: 'Paola Lenti',
-      url: 'https://www.paolalenti.it/en/home',
-    },
-    {
-      path: '/images/home/products/paoplaLengti.jpg',
-      title: 'USM Modular Furniture',
-      url: 'https://www.usm.com/en',
-    },
-  ]
-  // inspirations are 6 images of the products above
-  const inspirations = [
-    '/images/home/products/baxter.png',
-    '/images/home/products/cassina.png',
-    '/images/home/products/flexform.png',
-    '/images/home/products/tapis.png',
-    '/images/home/products/edra.png',
-  ]
-
   const brandApi = new BrandApi()
 
   const {
@@ -136,13 +85,13 @@ export default function Home() {
           ) : (
             brands &&
             brands.map((brand, index) => (
-              <Link href={'/'} key={index} className="cursor-pointer">
+              <Link href={`/brand/${brand.id}`} key={index} className="cursor-pointer">
                 <PlaceListItem
                 key={index}
                 {...brand}
                 imageSrc={brand.image ?? ''}
                 name={brand.name ?? ''}
-                href={'/'}
+                href={`/brand/${brand.id}`}
               />
               </Link>
             ))
