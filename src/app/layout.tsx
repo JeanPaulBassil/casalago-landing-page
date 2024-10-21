@@ -6,9 +6,13 @@ import { Toaster } from 'react-hot-toast'
 import ReactQueryClientProvider from '@/providers/ReactQueryProvider'
 import Header from './_components/Header'
 import Footer from './_components/Footer'
+import localFont from 'next/font/local'
 
-
-const inter = Inter({ subsets: ['latin'] })
+const baseticaFont = localFont({
+  src: '../../public/fonts/Basetica-Regular.otf',
+  weight: '400',
+  style: 'normal',
+})
 
 export const metadata: Metadata = {
   title: 'Casalago',
@@ -22,7 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} text-[#221e1f]`}>
+      <body className={`${baseticaFont.className} text-[#221e1f]`}>
         <ReactQueryClientProvider>
           <NextUIProvider>
             <div className="px-2 sm:px-5 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
