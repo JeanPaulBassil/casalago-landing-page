@@ -85,14 +85,14 @@ export default function Home() {
           ) : (
             brands &&
             brands.map((brand, index) => (
-              <Link href={`/brand/${brand.id}`} key={index} className="cursor-pointer">
+              <Link href={brand.url ?? ''} key={index} className="cursor-pointer">
                 <PlaceListItem
                 key={index}
                 {...brand}
                 imageSrc={brand.image ?? ''}
-                name={brand.name ?? ''}
-                href={`/brand/${brand.id}`}
-              />
+                  name={brand.name ?? ''}
+                  href={brand.url ?? ''}
+                />
               </Link>
             ))
           )}
