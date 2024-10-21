@@ -30,7 +30,6 @@ export type PlaceListItemProps = Omit<React.HTMLAttributes<HTMLDivElement>, 'id'
 
 const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
   ({ name, isLoading, imageSrc, removeWrapper, className, href, ...props }, ref) => {
-    const [isLiked, setIsLiked] = React.useState(false)
 
     return (
       <div ref={ref} className="relative flex w-full flex-none flex-col gap-3">
@@ -49,7 +48,7 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
           <div className="border-gray-200 flex items-center justify-between gap-1 border-b border-t py-2">
             <h3 className="text-small font-medium text-default-700">{name}</h3>
             <Link href={href}>
-              <Button isIconOnly startContent={<ArrowRight />} variant="light" size="sm"></Button>
+              <Button isIconOnly startContent={<ArrowRight color='grey' />} variant="light" size="sm"></Button>
             </Link>
           </div>
         </div>

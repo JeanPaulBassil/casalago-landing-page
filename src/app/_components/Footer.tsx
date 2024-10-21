@@ -15,7 +15,7 @@ const Footer = (props: Props) => {
     },
     {
       icon: '/icons/youtube.svg',
-      link: 'https://www.instagram.com/casalago.ng',
+      link: '/',
     },
     {
       icon: '/icons/whatsapp.png',
@@ -39,7 +39,7 @@ const Footer = (props: Props) => {
         <div className="grid w-full grid-cols-3 gap-12 max-xl:grid-cols-2 max-lg:grid-cols-1">
           {/* Emails */}
           <div className="flex flex-col">
-            <h1 className="mb-2 text-lg font-semibold">Sign up for exclusive news!</h1>
+            <h1 className="mb-2 text-lg">Sign up for exclusive news!</h1>
             <form action="" className="relative min-w-[200px] max-w-[400px] max-sm:w-3/4">
               <Input
                 type="email"
@@ -64,7 +64,7 @@ const Footer = (props: Props) => {
           </div>
           {/* Our Store */}
           <div className="flex flex-col">
-            <h1 className="mb-2 text-lg font-semibold">Our Store</h1>
+            <h1 className="mb-2 text-lg">Our Store</h1>
             <p>
               40 Adetokunbo Ademola Street <br /> Victoria Island, Lagos <br />
               T 234-814-159 6534 <br /> info@casalago.com
@@ -72,7 +72,7 @@ const Footer = (props: Props) => {
           </div>
 
           <div className="flex flex-col">
-            <h1 className="mb-2 text-lg font-semibold">Stay Up To Date With The Latest Trends</h1>
+            <h1 className="mb-2 text-lg">Stay Up To Date With The Latest Trends</h1>
             <div className="flex items-center gap-2">
               {socials.map((social, index) => (
                 <Link

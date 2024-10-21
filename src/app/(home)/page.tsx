@@ -39,8 +39,8 @@ export default function Home() {
       />
       {/* Below the banner */}
       <div className="flex w-full items-center py-12 max-xl:flex-col max-xl:gap-4 xl:py-24">
-        <h1 className="text-4xl font-bold max-xl:text-center max-xl:text-xl max-sm:text-lg xl:w-1/2 xl:self-start">
-          Your Very Own <br /> Personal Living Space.
+        <h1 className="text-[35px] font-bold max-xl:text-center max-xl:text-xl max-sm:text-lg xl:w-1/2 xl:self-start">
+          Your very own <br /> personal living space.
         </h1>
         <p className="text-xl font-medium max-xl:text-center max-xl:text-lg max-sm:text-base xl:w-1/2">
           Casalago believes that a home is not just a place, but a reflection of who you are.
@@ -61,13 +61,13 @@ export default function Home() {
           className="w-[48%] max-xl:w-full"
         />
         <div className="flex w-1/2 flex-col gap-4 px-8 py-12 max-xl:w-full">
-          <h2 className="text-4xl font-bold max-xl:text-center max-xl:text-xl max-sm:text-lg">
-            Live Better Feel Better
+          <h2 className="text-[35px] font-bold max-xl:text-center max-xl:text-xl max-sm:text-lg">
+            Live better feel better
           </h2>
           <p className="text-xl font-medium max-xl:text-center max-xl:text-lg max-sm:text-base">
             We shape your environment to perfectly suit your lifestyle, character and individuality.{' '}
             <br />
-            <br /> Creating beautiful living spaces that celebrate lifeí s precious moments, to be
+            <br /> Creating beautiful living spaces that celebrate life&apos;s precious moments, to be
             shared with loved ones or to be enjoyed in peace and quiet.
           </p>
         </div>
@@ -85,7 +85,7 @@ export default function Home() {
           ) : (
             brands &&
             brands.map((brand, index) => (
-              <Link href={brand.url ?? ''} key={index} className="cursor-pointer">
+              <Link href={brand.url ?? ''} key={index} className="cursor-pointer" target="_blank" rel="noopener noreferrer">
                 <PlaceListItem
                 key={index}
                 {...brand}
