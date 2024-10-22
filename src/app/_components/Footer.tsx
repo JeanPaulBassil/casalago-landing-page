@@ -34,7 +34,7 @@ const Footer = (props: Props) => {
   }
 
   return (
-    <div className="text-white flex flex-col gap-4 bg-[#ABC485] px-2 py-4 pt-8 text-[#ffffff] sm:px-5 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
+    <div className="text-white flex flex-col gap-4 bg-[#ABC485] px-2 pt-[10px] text-[#ffffff] sm:px-5 md:px-10 lg:px-16 xl:px-20 2xl:px-24">
       <div className="flex w-full flex-row justify-between gap-12 max-xl:flex-col">
         <div className="grid w-full grid-cols-3 gap-12 max-xl:grid-cols-2 max-lg:grid-cols-1">
           {/* Emails */}
