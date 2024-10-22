@@ -45,7 +45,7 @@ const PlaceListItem = React.forwardRef<HTMLDivElement, PlaceListItemProps>(
         />
 
         <div className="mt-1 flex flex-col gap-2">
-          <div className="border-gray-200 flex items-center justify-between gap-1 border-b border-t py-2">
+          <div className="border-gray-200 flex items-center justify-between gap-1 border-b border-t">
             <h3 className="text-small font-medium text-default-700">{name}</h3>
             <Link href={href}>
               <Button isIconOnly startContent={<ArrowRight color='grey' />} variant="light" size="sm"></Button>
