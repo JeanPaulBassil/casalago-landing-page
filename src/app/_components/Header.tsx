@@ -9,13 +9,10 @@ const Header = (props: Props) => {
             <Image
                 src="/logo.png"
                 alt="Logo"
-                width={40}
                 height={40}
-                className="w-[40px] h-[40px] max-lg:w-[30px] max-lg:h-[30px] max-sm:w-[20px] max-sm:h-[20px] max-sm:-translate-y-[2px]"
+                width={200}
+                className="h-[40px] max-lg:h-[30px] max-sm:h-[20px] max-sm:-translate-y-[2px]"
             />
-            <h1 className="text-4xl max-lg:text-xl max:-sm:text-lg font-bold translate-y-1">
-                casalago
-            </h1>
         </div>
     );
 };
