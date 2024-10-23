@@ -10,7 +10,7 @@ const Header = (props: Props) => {
                 src="/logo.png"
                 alt="Logo"
                 height={40}
-                width={200}
+                width={220}
                 className="h-[40px] max-lg:h-[30px] max-sm:h-[20px] max-sm:-translate-y-[2px]"
             />
         </div>
