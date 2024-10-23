@@ -15,7 +15,7 @@ const baseticaFont = localFont({
 })
 
 export const metadata: Metadata = {
-  title: 'Casalago',
+  title: 'casalago',
   description: 'Discover the finest quality furniture and accessories in Lebanon',
 }
 
